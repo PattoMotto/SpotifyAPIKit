@@ -1,10 +1,29 @@
 # SpotifyAPIKit
-The Spotify Web API for iOS
+The [Spotify Web API](https://developer.spotify.com/documentation/web-api) for iOS
 
 [![CI Status](https://img.shields.io/travis/PattoMotto/SpotifyAPIKit.svg?style=flat)](https://travis-ci.org/PattoMotto/SpotifyAPIKit)
 [![Version](https://img.shields.io/cocoapods/v/SpotifyAPIKit.svg?style=flat)](https://cocoapods.org/pods/SpotifyAPIKit)
 [![License](https://img.shields.io/cocoapods/l/SpotifyAPIKit.svg?style=flat)](https://cocoapods.org/pods/SpotifyAPIKit)
 [![Platform](https://img.shields.io/cocoapods/p/SpotifyAPIKit.svg?style=flat)](https://cocoapods.org/pods/SpotifyAPIKit)
+
+## Checklist for V1
+- [ ] Base network level (Alamofire?)
+- [ ] [Authorization Header](https://developer.spotify.com/documentation/general/guides/authorization-guide)
+- [ ] [MappedObjects](https://developer.spotify.com/documentation/web-api/reference-beta/#objects-index)
+- [ ] [Search API](https://developer.spotify.com/documentation/web-api/reference-beta/#category-search)
+- [ ] [Browse API](https://developer.spotify.com/documentation/web-api/reference-beta/#category-browse)
+- [ ] [Follow API](https://developer.spotify.com/documentation/web-api/reference-beta/#category-follow)
+- [ ] [Playlists API](https://developer.spotify.com/documentation/web-api/reference-beta/#category-playlists)
+- [ ] [Library API](https://developer.spotify.com/documentation/web-api/reference-beta/#category-library)
+- [ ] [Artists API](https://developer.spotify.com/documentation/web-api/reference-beta/#category-artists)
+- [ ] [Player API](https://developer.spotify.com/documentation/web-api/reference-beta/#category-player)
+- [ ] [Personalization API](https://developer.spotify.com/documentation/web-api/reference-beta/#category-personalization)
+- [ ] [User Profile API](https://developer.spotify.com/documentation/web-api/reference-beta/#category-users-profile)
+- [ ] [Albums API](https://developer.spotify.com/documentation/web-api/reference-beta/#category-albums)
+- [ ] [Tracks API](https://developer.spotify.com/documentation/web-api/reference-beta/#category-tracks)
+- [ ] [Episodes API](https://developer.spotify.com/documentation/web-api/reference-beta/#category-episodes)
+- [ ] [Shows API](https://developer.spotify.com/documentation/web-api/reference-beta/#category-shows)
+
 
 ## Example
 
