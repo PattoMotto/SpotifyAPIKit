@@ -1,4 +1,5 @@
 # SpotifyAPIKit
+The Spotify Web API for iOS
 
 [![CI Status](https://img.shields.io/travis/PattoMotto/SpotifyAPIKit.svg?style=flat)](https://travis-ci.org/PattoMotto/SpotifyAPIKit)
 [![Version](https://img.shields.io/cocoapods/v/SpotifyAPIKit.svg?style=flat)](https://cocoapods.org/pods/SpotifyAPIKit)
