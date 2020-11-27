@@ -1,6 +1,7 @@
 use_frameworks!
 
 target 'SpotifyAPIKit_Example' do
+  platform :ios, '11.0'
   pod 'SpotifyAPIKit', :path => '../'
 
   target 'SpotifyAPIKit_Tests' do

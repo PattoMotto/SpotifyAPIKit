@@ -1,6 +1,6 @@
 # SpotifyAPIKit
 
-[![CI Status](https://img.shields.io/travis/Patompong Manprasatkul/SpotifyAPIKit.svg?style=flat)](https://travis-ci.org/Patompong Manprasatkul/SpotifyAPIKit)
+[![CI Status](https://img.shields.io/travis/PattoMotto/SpotifyAPIKit.svg?style=flat)](https://travis-ci.org/PattoMotto/SpotifyAPIKit)
 [![Version](https://img.shields.io/cocoapods/v/SpotifyAPIKit.svg?style=flat)](https://cocoapods.org/pods/SpotifyAPIKit)
 [![License](https://img.shields.io/cocoapods/l/SpotifyAPIKit.svg?style=flat)](https://cocoapods.org/pods/SpotifyAPIKit)
 [![Platform](https://img.shields.io/cocoapods/p/SpotifyAPIKit.svg?style=flat)](https://cocoapods.org/pods/SpotifyAPIKit)
@@ -22,7 +22,7 @@ pod 'SpotifyAPIKit'
 
 ## Author
 
-Patompong Manprasatkul, 1745000+PattoMotto@users.noreply.github.com
+[@PattoMotto](https://github.com/PattoMotto)
 
 ## License
 

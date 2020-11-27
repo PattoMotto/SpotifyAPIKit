@@ -21,14 +21,15 @@ Pod::Spec.new do |s|
 TODO: Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'https://github.com/Patompong Manprasatkul/SpotifyAPIKit'
+  s.homepage         = 'https://github.com/PattoMotto/SpotifyAPIKit'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'Patompong Manprasatkul' => '1745000+PattoMotto@users.noreply.github.com' }
-  s.source           = { :git => 'https://github.com/Patompong Manprasatkul/SpotifyAPIKit.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.author           = 'PattoMotto'
+  s.source           = { :git => 'https://github.com/PattoMotto/SpotifyAPIKit.git', :tag => s.version.to_s }
+  s.social_media_url = 'https://twitter.com/PattoMotto'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '11.0'
+  s.osx.deployment_target = '10.12'
 
   s.source_files = 'SpotifyAPIKit/Classes/**/*'
   

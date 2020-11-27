@@ -2,8 +2,8 @@
 //  ViewController.swift
 //  SpotifyAPIKit
 //
-//  Created by Patompong Manprasatkul on 11/27/2020.
-//  Copyright (c) 2020 Patompong Manprasatkul. All rights reserved.
+//  Created by PattoMotto on 11/27/2020.
+//  Copyright (c) 2020 PattoMotto. All rights reserved.
 //
 
 import UIKit
