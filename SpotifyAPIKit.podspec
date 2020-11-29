@@ -34,6 +34,7 @@ The Spotify Web API for iOS/macOS build with Swift 5
 
   s.source_files = 'SpotifyAPIKit/Classes/**/*'
   
+  s.dependency 'Alamofire', '~> 5.2'
   # s.resource_bundles = {
   #   'SpotifyAPIKit' => ['SpotifyAPIKit/Assets/*.png']
   # }
