@@ -5,19 +5,19 @@
 
 import Foundation
 
-public struct ShowSimplified: Codable, Searchable {
-    let availableMarkets: [Country]
-    let copyrights: [Copyright]
-    let description: String
-    let explicit: Bool
-    let externalUrls: ExternalUrl
-    let href: String
-    let id: String
-    let images: [Image]
-    let isExternallyHosted: Bool?
-    let languages: [Language]
-    let mediaType: String
-    let name: String
-    let publisher: String
-    let uri: String
+public struct ShowSimplified: Codable, Searchable, Equatable {
+    public let availableMarkets: [Country]
+    public let copyrights: [Copyright]
+    public let description: String
+    public let explicit: Bool
+    public let externalUrls: ExternalUrl
+    public let href: String
+    public let id: String
+    public let images: [Image]
+    public let isExternallyHosted: Bool?
+    public let languages: [Language]
+    public let mediaType: String
+    public let name: String
+    public let publisher: String
+    public let uri: String
 }

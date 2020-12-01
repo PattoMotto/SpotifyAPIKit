@@ -9,6 +9,6 @@ public enum RestrictionReason: String, Codable {
     case market, product, explicit
 }
 
-public struct Restriction: Codable {
-    let reason: RestrictionReason
+public struct Restriction: Codable, Equatable {
+    public let reason: RestrictionReason
 }

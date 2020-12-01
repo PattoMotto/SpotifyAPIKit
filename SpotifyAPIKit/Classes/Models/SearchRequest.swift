@@ -6,12 +6,12 @@
 import Foundation
 
 public struct SearchRequest: Codable, Equatable {
-    let q: String
-    let type: ObjectType
-    let market: String?
-    let limit: Int?
-    let offset: Int?
-    let includeExternal: String?
+    public let q: String
+    public let type: ObjectType
+    public let market: String?
+    public let limit: Int?
+    public let offset: Int?
+    public let includeExternal: String?
 
     public init(q: String,
                 type: ObjectType,

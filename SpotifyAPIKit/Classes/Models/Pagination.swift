@@ -6,11 +6,11 @@
 import Foundation
 
 public struct Pagination<T: Codable>: Codable {
-    let items: [T]
-    let href: String
-    let limit: Int
-    let offset: Int
-    let next: String?
-    let previous: String?
-    let total: Int
+    public let items: [T]
+    public let href: String
+    public let limit: Int
+    public let offset: Int
+    public let next: String?
+    public let previous: String?
+    public let total: Int
 }

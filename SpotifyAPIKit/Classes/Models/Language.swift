@@ -5,11 +5,11 @@
 
 import Foundation
 
-struct Language: Codable {
-    let locale: Locale
-    let iso639code: String
+public struct Language: Codable, Equatable {
+    public let locale: Locale
+    public let iso639code: String
 
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         let container = try decoder.singleValueContainer()
         self.iso639code = try container.decode(String.self)
         self.locale = Locale(identifier: iso639code)

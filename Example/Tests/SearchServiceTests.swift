@@ -39,7 +39,7 @@ final class SearchServiceTests: QuickSpec {
                     }
 
                     it("should call with correct parameters") {
-                        expect(networkClient.calledRequestUrl) == "https://api.spotify.com/v1/search"
+                        expect(networkClient.calledRequestUrl) == "https://api.spotify.com/v1/search/"
                         expect(networkClient.calledRequestMethod) == .get
                         expect(networkClient.calledRequestParameters as? SearchRequest) == request
                     }
@@ -63,7 +63,7 @@ final class SearchServiceTests: QuickSpec {
                     }
 
                     it("should call with correct parameters") {
-                        expect(networkClient.calledRequestUrl) == "https://api.spotify.com/v1/search"
+                        expect(networkClient.calledRequestUrl) == "https://api.spotify.com/v1/search/"
                         expect(networkClient.calledRequestMethod) == .get
                         expect(networkClient.calledRequestParameters as? SearchRequest) == request
                     }
@@ -99,7 +99,7 @@ final class SearchServiceTests: QuickSpec {
                     }
 
                     it("should call with correct parameters") {
-                        expect(networkClient.calledRequestUrl) == "https://api.spotify.com/v1/search"
+                        expect(networkClient.calledRequestUrl) == "https://api.spotify.com/v1/search/"
                         expect(networkClient.calledRequestMethod) == .get
                         expect(networkClient.calledRequestParameters as? SearchRequest) == request
                     }
@@ -123,7 +123,7 @@ final class SearchServiceTests: QuickSpec {
                     }
 
                     it("should call with correct parameters") {
-                        expect(networkClient.calledRequestUrl) == "https://api.spotify.com/v1/search"
+                        expect(networkClient.calledRequestUrl) == "https://api.spotify.com/v1/search/"
                         expect(networkClient.calledRequestMethod) == .get
                         expect(networkClient.calledRequestParameters as? SearchRequest) == request
                     }
@@ -159,7 +159,7 @@ final class SearchServiceTests: QuickSpec {
                     }
 
                     it("should call with correct parameters") {
-                        expect(networkClient.calledRequestUrl) == "https://api.spotify.com/v1/search"
+                        expect(networkClient.calledRequestUrl) == "https://api.spotify.com/v1/search/"
                         expect(networkClient.calledRequestMethod) == .get
                         expect(networkClient.calledRequestParameters as? SearchRequest) == request
                     }
@@ -183,7 +183,7 @@ final class SearchServiceTests: QuickSpec {
                     }
 
                     it("should call with correct parameters") {
-                        expect(networkClient.calledRequestUrl) == "https://api.spotify.com/v1/search"
+                        expect(networkClient.calledRequestUrl) == "https://api.spotify.com/v1/search/"
                         expect(networkClient.calledRequestMethod) == .get
                         expect(networkClient.calledRequestParameters as? SearchRequest) == request
                     }
@@ -219,7 +219,7 @@ final class SearchServiceTests: QuickSpec {
                     }
 
                     it("should call with correct parameters") {
-                        expect(networkClient.calledRequestUrl) == "https://api.spotify.com/v1/search"
+                        expect(networkClient.calledRequestUrl) == "https://api.spotify.com/v1/search/"
                         expect(networkClient.calledRequestMethod) == .get
                         expect(networkClient.calledRequestParameters as? SearchRequest) == request
                     }
@@ -243,7 +243,7 @@ final class SearchServiceTests: QuickSpec {
                     }
 
                     it("should call with correct parameters") {
-                        expect(networkClient.calledRequestUrl) == "https://api.spotify.com/v1/search"
+                        expect(networkClient.calledRequestUrl) == "https://api.spotify.com/v1/search/"
                         expect(networkClient.calledRequestMethod) == .get
                         expect(networkClient.calledRequestParameters as? SearchRequest) == request
                     }
@@ -279,7 +279,7 @@ final class SearchServiceTests: QuickSpec {
                     }
 
                     it("should call with correct parameters") {
-                        expect(networkClient.calledRequestUrl) == "https://api.spotify.com/v1/search"
+                        expect(networkClient.calledRequestUrl) == "https://api.spotify.com/v1/search/"
                         expect(networkClient.calledRequestMethod) == .get
                         expect(networkClient.calledRequestParameters as? SearchRequest) == request
                     }
@@ -303,7 +303,7 @@ final class SearchServiceTests: QuickSpec {
                     }
 
                     it("should call with correct parameters") {
-                        expect(networkClient.calledRequestUrl) == "https://api.spotify.com/v1/search"
+                        expect(networkClient.calledRequestUrl) == "https://api.spotify.com/v1/search/"
                         expect(networkClient.calledRequestMethod) == .get
                         expect(networkClient.calledRequestParameters as? SearchRequest) == request
                     }

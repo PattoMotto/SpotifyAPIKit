@@ -20,9 +20,24 @@ final class NetworkClientMock: NetworkClient {
     }
 
     override func request<Parameters, Result>(url: String,
-                                              method: NetworkRequestMethod,
-                                              parameters: Parameters?,
-                                              onCompletion: @escaping (SpotifyResult<Result>) -> Void) where Parameters : Encodable, Result : Decodable {
+                                     method: NetworkRequestMethod,
+                                     parameters: Parameters?,
+                                     onCompletion: @escaping (SpotifyResult<Result>) -> Void) where Parameters : Encodable, Result : Decodable {
+        calledRequestUrl = url
+        calledRequestMethod = method
+        calledRequestParameters = parameters
+        mockedSuccess.flatMap { $0 as? Result }.map {
+            onCompletion(.success($0))
+        }
+        mockedError.map {
+            onCompletion(.failure($0))
+        }
+    }
+
+    override func request<Result>(url: String,
+                                  method: NetworkRequestMethod,
+                                  parameters: Parameters? = nil,
+                                  onCompletion: @escaping (SpotifyResult<Result>) -> Void) where Result : Decodable {
         calledRequestUrl = url
         calledRequestMethod = method
         calledRequestParameters = parameters

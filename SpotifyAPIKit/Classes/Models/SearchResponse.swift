@@ -8,7 +8,7 @@ import Foundation
 public protocol Searchable: Codable {}
 
 struct SearchResponse<T: Searchable>: Decodable {
-    var searchResult: Pagination<T>
+    public var searchResult: Pagination<T>
 
     init(searchResult: Pagination<T>) {
         self.searchResult = searchResult

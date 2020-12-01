@@ -5,7 +5,7 @@
 
 import Foundation
 
-struct Follower: Codable {
-    let href: String?
-    let total: Int
+public struct Follower: Codable, Equatable {
+    public let href: String?
+    public let total: Int
 }

@@ -5,8 +5,13 @@
 
 import Foundation
 
-public struct Image: Codable {
-    let url: String
-    let height: Int?
-    let width: Int?
+public struct Image: Codable, Equatable {
+    public let url: String
+    public let height: Int?
+    public let width: Int?
+
+    public var size: CGSize? {
+        guard let width = width, let height = height else { return nil }
+        return CGSize(width: width, height: height)
+    }
 }

@@ -5,6 +5,6 @@
 
 import Foundation
 
-public struct ExternalUrl: Codable {
-    let spotify: String
+public struct ExternalUrl: Codable, Equatable {
+    public let spotify: String
 }

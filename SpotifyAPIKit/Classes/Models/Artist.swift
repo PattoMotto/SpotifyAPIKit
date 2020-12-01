@@ -5,14 +5,14 @@
 
 import Foundation
 
-public struct Artist: Codable, Searchable {
-    let externalUrls: ExternalUrl
-    let followers: Follower
-    let genres: [String]
-    let href: String
-    let id: String
-    let images: [Image]
-    let name: String
-    let popularity: Int
-    let uri: String
+public struct Artist: Codable, Searchable, Equatable {
+    public let externalUrls: ExternalUrl
+    public let followers: Follower
+    public let genres: [String]
+    public let href: String
+    public let id: String
+    public let images: [Image]
+    public let name: String
+    public let popularity: Int
+    public let uri: String
 }

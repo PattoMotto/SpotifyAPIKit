@@ -5,7 +5,7 @@
 
 import Foundation
 
-public struct ResumePoint: Codable {
-    let fullyPlayed: Bool
-    let resumePositionMs: Int
+public struct ResumePoint: Codable, Equatable {
+    public let fullyPlayed: Bool
+    public let resumePositionMs: Int
 }

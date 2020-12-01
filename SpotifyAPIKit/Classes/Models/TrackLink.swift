@@ -5,9 +5,9 @@
 
 import Foundation
 
-public struct TrackLink: Codable {
-    let externalUrls: ExternalUrl
-    let href: String
-    let id: String
-    let uri: String
+public struct TrackLink: Codable, Equatable {
+    public let externalUrls: ExternalUrl
+    public let href: String
+    public let id: String
+    public let uri: String
 }

@@ -5,11 +5,11 @@
 
 import Foundation
 
-public enum CopyrightType: String, Codable {
+public enum CopyrightType: String, Codable, Equatable {
     case copyright = "C"
     case performance = "P"
 }
-public struct Copyright: Codable {
-    let text: String
-    let type: CopyrightType
+public struct Copyright: Codable, Equatable {
+    public let text: String
+    public let type: CopyrightType
 }

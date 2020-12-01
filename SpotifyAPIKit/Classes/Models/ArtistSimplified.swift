@@ -5,10 +5,10 @@
 
 import Foundation
 
-public struct ArtistSimplified: Codable {
-    let externalUrls: ExternalUrl
-    let href: String
-    let id: String
-    let name: String
-    let uri: String
+public struct ArtistSimplified: Codable, Equatable {
+    public let externalUrls: ExternalUrl
+    public let href: String
+    public let id: String
+    public let name: String
+    public let uri: String
 }

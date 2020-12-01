@@ -22,6 +22,9 @@
 		77EFFB9525769C1D00F00656 /* Track+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EFFB9425769C1D00F00656 /* Track+Mock.swift */; };
 		77EFFB9925769C3300F00656 /* ShowSimplified+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EFFB9825769C3300F00656 /* ShowSimplified+Mock.swift */; };
 		77EFFB9D25769C4700F00656 /* EpisodeSimplified+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EFFB9C25769C4700F00656 /* EpisodeSimplified+Mock.swift */; };
+		77EFFC252576C57C00F00656 /* TrackServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EFFC242576C57C00F00656 /* TrackServiceTests.swift */; };
+		77EFFC292576C84100F00656 /* AudioFeature+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EFFC282576C84100F00656 /* AudioFeature+Mock.swift */; };
+		77EFFC412576CA9600F00656 /* AudioAnalysis+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EFFC402576CA9600F00656 /* AudioAnalysis+Mock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +60,9 @@
 		77EFFB9425769C1D00F00656 /* Track+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Track+Mock.swift"; sourceTree = "<group>"; };
 		77EFFB9825769C3300F00656 /* ShowSimplified+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShowSimplified+Mock.swift"; sourceTree = "<group>"; };
 		77EFFB9C25769C4700F00656 /* EpisodeSimplified+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EpisodeSimplified+Mock.swift"; sourceTree = "<group>"; };
+		77EFFC242576C57C00F00656 /* TrackServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackServiceTests.swift; sourceTree = "<group>"; };
+		77EFFC282576C84100F00656 /* AudioFeature+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AudioFeature+Mock.swift"; sourceTree = "<group>"; };
+		77EFFC402576CA9600F00656 /* AudioAnalysis+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AudioAnalysis+Mock.swift"; sourceTree = "<group>"; };
 		9DF9D49E68C18D11BD392800 /* Pods-SpotifyAPIKit_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpotifyAPIKit_Example.release.xcconfig"; path = "Target Support Files/Pods-SpotifyAPIKit_Example/Pods-SpotifyAPIKit_Example.release.xcconfig"; sourceTree = "<group>"; };
 		9F9CCCAC32E97C750AE014C6 /* Pods_SpotifyAPIKit_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpotifyAPIKit_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED50919FDF93A875CFC0F8C6 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
@@ -141,6 +147,7 @@
 				77EFFB712576812B00F00656 /* Mocks */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 				77EFFB6B257680E000F00656 /* SearchServiceTests.swift */,
+				77EFFC242576C57C00F00656 /* TrackServiceTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -173,6 +180,8 @@
 				77EFFB9425769C1D00F00656 /* Track+Mock.swift */,
 				77EFFB9825769C3300F00656 /* ShowSimplified+Mock.swift */,
 				77EFFB9C25769C4700F00656 /* EpisodeSimplified+Mock.swift */,
+				77EFFC282576C84100F00656 /* AudioFeature+Mock.swift */,
+				77EFFC402576CA9600F00656 /* AudioAnalysis+Mock.swift */,
 			);
 			name = Mocks;
 			sourceTree = "<group>";
@@ -398,7 +407,10 @@
 				77EFFB7925768BC000F00656 /* Pagination+Mock.swift in Sources */,
 				77EFFB7F25768DCF00F00656 /* AlbumSimplified+Mock.swift in Sources */,
 				77EFFB9125769B5700F00656 /* Artist+Mock.swift in Sources */,
+				77EFFC252576C57C00F00656 /* TrackServiceTests.swift in Sources */,
+				77EFFC292576C84100F00656 /* AudioFeature+Mock.swift in Sources */,
 				77EFFB9525769C1D00F00656 /* Track+Mock.swift in Sources */,
+				77EFFC412576CA9600F00656 /* AudioAnalysis+Mock.swift in Sources */,
 				77EFFB6C257680E000F00656 /* SearchServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

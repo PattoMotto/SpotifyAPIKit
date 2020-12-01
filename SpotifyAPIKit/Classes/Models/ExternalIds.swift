@@ -5,8 +5,8 @@
 
 import Foundation
 
-public struct ExternalIds: Codable {
-    let isrc: String?
-    let ean: String?
-    let upc: String?
+public struct ExternalIds: Codable, Equatable {
+    public let isrc: String?
+    public let ean: String?
+    public let upc: String?
 }

@@ -8,12 +8,12 @@ import Foundation
 public typealias SpotifyResult<T> = Swift.Result<T, SpotifyError>
 
 extension Swift.Result {
-    var value: Success? {
+    public var value: Success? {
         guard case .success(let value) = self else { return nil }
         return value
     }
 
-    var error: Failure? {
+    public var error: Failure? {
         guard case .failure(let error) = self else { return nil }
         return error
     }

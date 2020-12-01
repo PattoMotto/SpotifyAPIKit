@@ -6,7 +6,6 @@
 import Foundation
 
 class SearchService {
-    private let url = "https://api.spotify.com/v1/search"
     private let networkClient: NetworkClient
 
     init(with networkClient: NetworkClient) {
@@ -15,7 +14,7 @@ class SearchService {
 
     func search<T: Searchable>(request: SearchRequest,
                    onCompletion: @escaping (SpotifyResult<Pagination<T>>) -> Void) {
-        networkClient.request(url: url,
+        networkClient.request(url: SpotifyEndpoints.search,
                               method: .get,
                               parameters: request) { (result: SpotifyResult<SearchResponse<T>>) in
             switch result {
