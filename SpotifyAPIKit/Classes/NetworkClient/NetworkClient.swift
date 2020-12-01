@@ -10,8 +10,7 @@ enum NetworkRequestMethod {
     case get, delete, post, patch
 }
 
-final class NetworkClient {
-
+class NetworkClient {
     private var header: HTTPHeaders? {
         guard let authToken = authToken else { return nil}
         return HTTPHeaders([.authorization(bearerToken: authToken)])
@@ -24,11 +23,6 @@ final class NetworkClient {
     }()
 
     private var authToken: String? = nil
-
-    func update(token: String) {
-        authToken = token
-    }
-
     private let session: Session
 
     init() {
@@ -37,12 +31,15 @@ final class NetworkClient {
 
         session = Session(configuration: configuration)
     }
-    
-    func request<Parameters: Encodable, Result: Decodable>(url: String,
-                                                           method: NetworkRequestMethod,
-                                                           parameters: Parameters?,
-                                                           onCompletion: @escaping (SpotifyResult<Result>) -> Void) {
 
+    func update(token: String) {
+        authToken = token
+    }
+
+    func request<Parameters, Result>(url: String,
+                                     method: NetworkRequestMethod,
+                                     parameters: Parameters?,
+                                     onCompletion: @escaping (SpotifyResult<Result>) -> Void) where Parameters : Encodable, Result : Decodable {
         session.request(url, method: method.httpMethod, parameters: parameters, headers: header)
             .responseDecodable(of: Result.self, decoder: decoder) { [weak self] (response: DataResponse<Result, AFError>) in
                 switch response.result {

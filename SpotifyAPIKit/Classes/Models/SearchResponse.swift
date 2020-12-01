@@ -10,6 +10,10 @@ public protocol Searchable: Codable {}
 struct SearchResponse<T: Searchable>: Decodable {
     var searchResult: Pagination<T>
 
+    init(searchResult: Pagination<T>) {
+        self.searchResult = searchResult
+    }
+
     enum CodingKeys: String, CaseIterable, CodingKey {
         case albums
         case artists

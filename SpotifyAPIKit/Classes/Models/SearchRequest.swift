@@ -5,7 +5,7 @@
 
 import Foundation
 
-public struct SearchRequest: Codable {
+public struct SearchRequest: Codable, Equatable {
     let q: String
     let type: ObjectType
     let market: String?

@@ -14,7 +14,14 @@
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
-		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		77EFFB6C257680E000F00656 /* SearchServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EFFB6B257680E000F00656 /* SearchServiceTests.swift */; };
+		77EFFB732576813700F00656 /* NetworkClientMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EFFB722576813700F00656 /* NetworkClientMock.swift */; };
+		77EFFB7925768BC000F00656 /* Pagination+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EFFB7825768BC000F00656 /* Pagination+Mock.swift */; };
+		77EFFB7F25768DCF00F00656 /* AlbumSimplified+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EFFB7E25768DCF00F00656 /* AlbumSimplified+Mock.swift */; };
+		77EFFB9125769B5700F00656 /* Artist+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EFFB9025769B5700F00656 /* Artist+Mock.swift */; };
+		77EFFB9525769C1D00F00656 /* Track+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EFFB9425769C1D00F00656 /* Track+Mock.swift */; };
+		77EFFB9925769C3300F00656 /* ShowSimplified+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EFFB9825769C3300F00656 /* ShowSimplified+Mock.swift */; };
+		77EFFB9D25769C4700F00656 /* EpisodeSimplified+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EFFB9C25769C4700F00656 /* EpisodeSimplified+Mock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,8 +48,15 @@
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* SpotifyAPIKit_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpotifyAPIKit_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		6D114F3266E3E2AAC3BE1023 /* SpotifyAPIKit.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = SpotifyAPIKit.podspec; path = ../SpotifyAPIKit.podspec; sourceTree = "<group>"; };
+		77EFFB6B257680E000F00656 /* SearchServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchServiceTests.swift; sourceTree = "<group>"; };
+		77EFFB722576813700F00656 /* NetworkClientMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClientMock.swift; sourceTree = "<group>"; };
+		77EFFB7825768BC000F00656 /* Pagination+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pagination+Mock.swift"; sourceTree = "<group>"; };
+		77EFFB7E25768DCF00F00656 /* AlbumSimplified+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AlbumSimplified+Mock.swift"; sourceTree = "<group>"; };
+		77EFFB9025769B5700F00656 /* Artist+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Artist+Mock.swift"; sourceTree = "<group>"; };
+		77EFFB9425769C1D00F00656 /* Track+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Track+Mock.swift"; sourceTree = "<group>"; };
+		77EFFB9825769C3300F00656 /* ShowSimplified+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShowSimplified+Mock.swift"; sourceTree = "<group>"; };
+		77EFFB9C25769C4700F00656 /* EpisodeSimplified+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EpisodeSimplified+Mock.swift"; sourceTree = "<group>"; };
 		9DF9D49E68C18D11BD392800 /* Pods-SpotifyAPIKit_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpotifyAPIKit_Example.release.xcconfig"; path = "Target Support Files/Pods-SpotifyAPIKit_Example/Pods-SpotifyAPIKit_Example.release.xcconfig"; sourceTree = "<group>"; };
 		9F9CCCAC32E97C750AE014C6 /* Pods_SpotifyAPIKit_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpotifyAPIKit_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED50919FDF93A875CFC0F8C6 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
@@ -124,8 +138,9 @@
 		607FACE81AFB9204008FA782 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				607FACEB1AFB9204008FA782 /* Tests.swift */,
+				77EFFB712576812B00F00656 /* Mocks */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
+				77EFFB6B257680E000F00656 /* SearchServiceTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -146,6 +161,20 @@
 				431B043272409DAE8DCDA61A /* LICENSE */,
 			);
 			name = "Podspec Metadata";
+			sourceTree = "<group>";
+		};
+		77EFFB712576812B00F00656 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				77EFFB722576813700F00656 /* NetworkClientMock.swift */,
+				77EFFB7825768BC000F00656 /* Pagination+Mock.swift */,
+				77EFFB7E25768DCF00F00656 /* AlbumSimplified+Mock.swift */,
+				77EFFB9025769B5700F00656 /* Artist+Mock.swift */,
+				77EFFB9425769C1D00F00656 /* Track+Mock.swift */,
+				77EFFB9825769C3300F00656 /* ShowSimplified+Mock.swift */,
+				77EFFB9C25769C4700F00656 /* EpisodeSimplified+Mock.swift */,
+			);
+			name = Mocks;
 			sourceTree = "<group>";
 		};
 		E706885960D16A058E220A5B /* Pods */ = {
@@ -363,7 +392,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACEC1AFB9204008FA782 /* Tests.swift in Sources */,
+				77EFFB9925769C3300F00656 /* ShowSimplified+Mock.swift in Sources */,
+				77EFFB732576813700F00656 /* NetworkClientMock.swift in Sources */,
+				77EFFB9D25769C4700F00656 /* EpisodeSimplified+Mock.swift in Sources */,
+				77EFFB7925768BC000F00656 /* Pagination+Mock.swift in Sources */,
+				77EFFB7F25768DCF00F00656 /* AlbumSimplified+Mock.swift in Sources */,
+				77EFFB9125769B5700F00656 /* Artist+Mock.swift in Sources */,
+				77EFFB9525769C1D00F00656 /* Track+Mock.swift in Sources */,
+				77EFFB6C257680E000F00656 /* SearchServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
