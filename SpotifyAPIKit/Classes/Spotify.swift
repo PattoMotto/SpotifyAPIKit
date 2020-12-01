@@ -13,8 +13,8 @@ public final class Spotify {
         networkClient.update(token: token)
     }
 
-    public static func searchAlbum(request: SearchRequest,
-                                   onCompletion: @escaping (SpotifyResult<Pagination<Album>>) -> Void) {
-        searchService.searchAlbum(request: request, onCompletion: onCompletion)
+    public static func search<T: Searchable>(request: SearchRequest,
+                                             onCompletion: @escaping (SpotifyResult<Pagination<T>>) -> Void) {
+        searchService.search(request: request, onCompletion: onCompletion)
     }
 }

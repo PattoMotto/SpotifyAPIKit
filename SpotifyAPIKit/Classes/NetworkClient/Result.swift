@@ -5,7 +5,7 @@
 
 import Foundation
 
-public typealias SpotifyResult<T> = Swift.Result<T, Swift.Error>
+public typealias SpotifyResult<T> = Swift.Result<T, SpotifyError>
 
 extension Swift.Result {
     var value: Success? {
