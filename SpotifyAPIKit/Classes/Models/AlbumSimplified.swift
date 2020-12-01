@@ -6,15 +6,16 @@
 import Foundation
 
 public struct AlbumSimplified: Codable, Searchable, Equatable {
-    public let id: String
+    public let albumType: AlbumType
+    public let artists: [ArtistSimplified]
+    public let availableMarkets: [Country]
+    public let externalUrls: ExternalUrl
     public let href: String
+    public let id: String
+    public let images: [Image]
     public let name: String
-    public let uri: String
-    public let albumType: String
     public let releaseDate: String
     public let releaseDatePrecision: DatePrecision
-    public let availableMarkets: [Country]
-    public let artists: [ArtistSimplified]
-    public let images: [Image]
     public let restrictions: Restriction?
+    public let uri: String
 }

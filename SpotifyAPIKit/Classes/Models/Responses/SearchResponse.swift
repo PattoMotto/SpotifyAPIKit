@@ -5,7 +5,7 @@
 
 import Foundation
 
-public protocol Searchable: Codable {}
+public protocol Searchable: Codable & Equatable {}
 
 struct SearchResponse<T: Searchable>: Decodable {
     public var searchResult: Pagination<T>

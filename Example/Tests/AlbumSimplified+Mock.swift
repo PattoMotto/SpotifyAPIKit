@@ -8,16 +8,17 @@ import Foundation
 
 extension AlbumSimplified {
     init(id: String) {
-        self.init(id: id,
+        self.init(albumType: .album,
+                  artists: [],
+                  availableMarkets: [],
+                  externalUrls: ExternalUrl(spotify: ""),
                   href: "",
+                  id: id,
+                  images: [],
                   name: "",
-                  uri: "",
-                  albumType: "",
                   releaseDate: "",
                   releaseDatePrecision: .day,
-                  availableMarkets: [],
-                  artists: [],
-                  images: [],
-                  restrictions: nil)
+                  restrictions: nil,
+                  uri: "")
     }
 }

@@ -5,7 +5,7 @@
 
 import Foundation
 
-public struct Pagination<T: Codable>: Codable {
+public struct Pagination<T: Codable & Equatable>: Codable, Equatable {
     public let items: [T]
     public let href: String
     public let limit: Int

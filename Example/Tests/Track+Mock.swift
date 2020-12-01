@@ -21,6 +21,7 @@ extension Track {
                   isPlayable: nil,
                   linkedFrom: nil,
                   restrictions: nil,
+                  name: "",
                   popularity: 0,
                   previewUrl: nil,
                   trackNumber: 0,
