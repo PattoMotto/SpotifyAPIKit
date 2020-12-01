@@ -9,7 +9,7 @@ The [Spotify Web API](https://developer.spotify.com/documentation/web-api) for i
 ## Checklist for V1
 - [x] Base network level (Alamofire?)
 - [x] [Authorization Header](https://developer.spotify.com/documentation/general/guides/authorization-guide)
-- [ ] [MappedObjects](https://developer.spotify.com/documentation/web-api/reference-beta/#objects-index)
+- [x] [MappedObjects](https://developer.spotify.com/documentation/web-api/reference-beta/#objects-index)
 - [x] [Search API](https://developer.spotify.com/documentation/web-api/reference-beta/#category-search)
 - [ ] [Browse API](https://developer.spotify.com/documentation/web-api/reference-beta/#category-browse)
 - [ ] [Follow API](https://developer.spotify.com/documentation/web-api/reference-beta/#category-follow)
