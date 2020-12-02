@@ -527,3 +527,9 @@ public enum Country: String, Equatable, Hashable, Codable, CaseIterable {
         }
     }
 }
+
+extension Country {
+    var queryParameters: [String: Any] {
+        return ["market": rawValue]
+    }
+}

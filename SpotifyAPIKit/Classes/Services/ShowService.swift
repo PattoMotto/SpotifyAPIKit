@@ -28,7 +28,7 @@ class ShowService {
 
     func getShow(id: String, market: Country? = nil, onCompletion: @escaping (SpotifyResult<Show>) -> Void) {
         networkClient.request(url: SpotifyEndpoints.shows + id,
-                              parameters: ["market": market?.rawValue],
+                              parameters: market?.queryParameters,
                               onCompletion: onCompletion)
     }
 

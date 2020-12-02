@@ -28,7 +28,7 @@ class AlbumService {
 
     func getAlbum(id: String, market: Country? = nil, onCompletion: @escaping (SpotifyResult<Album>) -> Void) {
         networkClient.request(url: SpotifyEndpoints.albums + id,
-                              parameters: ["market": market?.rawValue],
+                              parameters: market?.queryParameters,
                               onCompletion: onCompletion)
     }
 

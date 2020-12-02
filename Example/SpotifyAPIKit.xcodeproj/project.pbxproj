@@ -39,6 +39,8 @@
 		77EFFDDD257808BD00F00656 /* EpisodeServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EFFDDC257808BD00F00656 /* EpisodeServiceTests.swift */; };
 		77EFFE032578101C00F00656 /* Show+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EFFE022578101C00F00656 /* Show+Mock.swift */; };
 		77EFFE072578108100F00656 /* ShowServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EFFE062578108100F00656 /* ShowServiceTests.swift */; };
+		77F811D6257827A900E688A9 /* BrowseServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F811D5257827A900E688A9 /* BrowseServiceTests.swift */; };
+		77F811DA257827C700E688A9 /* Category+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F811D9257827C700E688A9 /* Category+Mock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +93,8 @@
 		77EFFDDC257808BD00F00656 /* EpisodeServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeServiceTests.swift; sourceTree = "<group>"; };
 		77EFFE022578101C00F00656 /* Show+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Show+Mock.swift"; sourceTree = "<group>"; };
 		77EFFE062578108100F00656 /* ShowServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowServiceTests.swift; sourceTree = "<group>"; };
+		77F811D5257827A900E688A9 /* BrowseServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseServiceTests.swift; sourceTree = "<group>"; };
+		77F811D9257827C700E688A9 /* Category+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+Mock.swift"; sourceTree = "<group>"; };
 		9DF9D49E68C18D11BD392800 /* Pods-SpotifyAPIKit_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpotifyAPIKit_Example.release.xcconfig"; path = "Target Support Files/Pods-SpotifyAPIKit_Example/Pods-SpotifyAPIKit_Example.release.xcconfig"; sourceTree = "<group>"; };
 		9F9CCCAC32E97C750AE014C6 /* Pods_SpotifyAPIKit_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpotifyAPIKit_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED50919FDF93A875CFC0F8C6 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
@@ -205,6 +209,7 @@
 				77EFFB9025769B5700F00656 /* Artist+Mock.swift */,
 				77EFFC402576CA9600F00656 /* AudioAnalysis+Mock.swift */,
 				77EFFC282576C84100F00656 /* AudioFeature+Mock.swift */,
+				77F811D9257827C700E688A9 /* Category+Mock.swift */,
 				77EFFDD82578084500F00656 /* Episode+Mock.swift */,
 				77EFFB9C25769C4700F00656 /* EpisodeSimplified+Mock.swift */,
 				77EFFB722576813700F00656 /* NetworkClientMock.swift */,
@@ -232,6 +237,7 @@
 				77EFFE062578108100F00656 /* ShowServiceTests.swift */,
 				77EFFC242576C57C00F00656 /* TrackServiceTests.swift */,
 				77EFFD502577CCA400F00656 /* UserProfileServiceTests.swift */,
+				77F811D5257827A900E688A9 /* BrowseServiceTests.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -452,6 +458,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				77EFFD592577CD4800F00656 /* PrivateUser+Mock.swift in Sources */,
+				77F811D6257827A900E688A9 /* BrowseServiceTests.swift in Sources */,
 				77EFFB9925769C3300F00656 /* ShowSimplified+Mock.swift in Sources */,
 				77EFFB732576813700F00656 /* NetworkClientMock.swift in Sources */,
 				77EFFDD92578084500F00656 /* Episode+Mock.swift in Sources */,
@@ -473,6 +480,7 @@
 				77EFFD552577CCBB00F00656 /* PlaylistServiceTests.swift in Sources */,
 				77EFFD5D2577CE3C00F00656 /* PlaylistSimplified+Mock.swift in Sources */,
 				77EFFC412576CA9600F00656 /* AudioAnalysis+Mock.swift in Sources */,
+				77F811DA257827C700E688A9 /* Category+Mock.swift in Sources */,
 				77EFFDDD257808BD00F00656 /* EpisodeServiceTests.swift in Sources */,
 				77EFFB6C257680E000F00656 /* SearchServiceTests.swift in Sources */,
 				77EFFD652577D07900F00656 /* Playlist+Mock.swift in Sources */,

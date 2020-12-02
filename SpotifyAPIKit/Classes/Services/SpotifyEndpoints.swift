@@ -19,6 +19,11 @@ enum SpotifyEndpoints {
     static let myPlaylists = spotifyBaseURL + "me/playlists/"
     static let myProfile = spotifyBaseURL + "me/"
     static let userProfile = spotifyBaseURL + "users/"
+    static let browseNewReleases = spotifyBaseURL + "browse/new-releases/"
+    static let browseFeaturedPlaylists = spotifyBaseURL + "browse/featured-playlists/"
+    static let browseCategories = spotifyBaseURL + "browse/categories/"
+    static let recommendations = spotifyBaseURL + "recommendations/"
+    static let recommendationsGenre = spotifyBaseURL + "recommendations/available-genre-seeds/"
 
     static func albumsTracks(albumId: String) -> String {
         return spotifyBaseURL + "albums/\(albumId)/tracks/"
@@ -34,6 +39,10 @@ enum SpotifyEndpoints {
 
     static func playlistsImages(plalistId: String) -> String {
         return spotifyBaseURL + "playlists/\(plalistId)/images/"
+    }
+
+    static func browseCategoriesPlaylists(categoryId: String) -> String {
+        return spotifyBaseURL + "browse/categories/\(categoryId)/playlists/"
     }
 
     static func showsEpisodes(showId: String) -> String {

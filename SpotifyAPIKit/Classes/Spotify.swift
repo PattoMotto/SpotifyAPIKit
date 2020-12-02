@@ -14,6 +14,7 @@ public final class Spotify {
     static private let albumService = AlbumService(with: networkClient)
     static private let episodeService = EpisodeService(with: networkClient)
     static private let showService = ShowService(with: networkClient)
+    static private let browseService = BrowseService(with: networkClient)
     
     // Mark: - Authentication
 
@@ -26,7 +27,9 @@ public final class Spotify {
     public static func search<T: Searchable>(parameters: SearchParameters,
                                              pagingParameters: PagingParameters? = nil,
                                              onCompletion: @escaping (SpotifyResult<Paging<T>>) -> Void) {
-        searchService.search(parameters: parameters, pagingParameters: pagingParameters, onCompletion: onCompletion)
+        searchService.search(parameters: parameters,
+                             pagingParameters: pagingParameters,
+                             onCompletion: onCompletion)
     }
 
     // Mark: - Track
@@ -76,7 +79,9 @@ public final class Spotify {
     public static func getUserPlaylists(userId: String,
                                         pagingParameters: PagingParameters? = nil,
                                         onCompletion: @escaping (SpotifyResult<Paging<PlaylistSimplified>>) -> Void) {
-        playlistService.getUserPlaylists(userId: userId, pagingParameters: pagingParameters, onCompletion: onCompletion)
+        playlistService.getUserPlaylists(userId: userId,
+                                         pagingParameters: pagingParameters,
+                                         onCompletion: onCompletion)
     }
 
     public static func createPlaylist(userId: String,
@@ -128,15 +133,21 @@ public final class Spotify {
         )
     }
 
-    public static func getEpisodes(ids: [String], market: Country? = nil, onCompletion: @escaping (SpotifyResult<[Episode]>) -> Void) {
+    public static func getEpisodes(ids: [String],
+                                   market: Country? = nil,
+                                   onCompletion: @escaping (SpotifyResult<[Episode]>) -> Void) {
         episodeService.getEpisodes(ids: ids, market: market, onCompletion: onCompletion)
     }
 
-    public static func getEpisode(id: String, market: Country? = nil, onCompletion: @escaping (SpotifyResult<Episode>) -> Void) {
+    public static func getEpisode(id: String,
+                                  market: Country? = nil,
+                                  onCompletion: @escaping (SpotifyResult<Episode>) -> Void) {
         episodeService.getEpisode(id: id, market: market, onCompletion: onCompletion)
     }
 
-    public static func getShows(ids: [String], market: Country? = nil, onCompletion: @escaping (SpotifyResult<[ShowSimplified]>) -> Void) {
+    public static func getShows(ids: [String],
+                                market: Country? = nil,
+                                onCompletion: @escaping (SpotifyResult<[ShowSimplified]>) -> Void) {
         showService.getShows(ids: ids, market: market, onCompletion: onCompletion)
     }
 
@@ -148,6 +159,54 @@ public final class Spotify {
                                          market: Country? = nil,
                                          pagingParameters: PagingParameters? = nil,
                                          onCompletion: @escaping (SpotifyResult<Paging<EpisodeSimplified>>) -> Void) {
-        showService.getEpisodesInShow(id: id, market: market, pagingParameters: pagingParameters, onCompletion: onCompletion)
+        showService.getEpisodesInShow(id: id, market: market,
+                                      pagingParameters: pagingParameters,
+                                      onCompletion: onCompletion)
+    }
+
+    public static func getNewReleases(parameters: BrowseParameters? = nil,
+                                      pagingParameters: PagingParameters? = nil,
+                                      onCompletion: @escaping (SpotifyResult<Paging<AlbumSimplified>>) -> Void) {
+        browseService.getNewReleases(parameters: parameters,
+                                     pagingParameters: pagingParameters,
+                                     onCompletion: onCompletion)
+    }
+
+    public static func getFeaturedPlaylists(parameters: BrowseParameters? = nil,
+                                            pagingParameters: PagingParameters? = nil,
+                                            onCompletion: @escaping (SpotifyResult<FeaturedPlaylists>) -> Void) {
+        browseService.getFeaturedPlaylists(parameters: parameters,
+                                           pagingParameters: pagingParameters,
+                                           onCompletion: onCompletion)
+    }
+
+    public static func getCategories(parameters: BrowseParameters? = nil,
+                                     pagingParameters: PagingParameters? = nil,
+                                     onCompletion: @escaping (SpotifyResult<Paging<Category>>) -> Void) {
+        browseService.getCategories(parameters: parameters,
+                                    pagingParameters: pagingParameters,
+                                    onCompletion: onCompletion)
+    }
+
+    public static func getCategory(id: String,
+                                   parameters: BrowseParameters? = nil,
+                                   onCompletion: @escaping (SpotifyResult<Category>) -> Void) {
+        browseService.getCategory(id: id,
+                                  parameters: parameters,
+                                  onCompletion: onCompletion)
+    }
+
+    public static func getPlaylistsInCategory(id: String,
+                                              onCompletion: @escaping (SpotifyResult<Paging<PlaylistSimplified>>) -> Void) {
+        browseService.getPlaylistsInCategory(id: id, onCompletion: onCompletion)
+    }
+
+    public static func getRecommendationGenres(onCompletion: @escaping (SpotifyResult<[String]>) -> Void) {
+        browseService.getRecommendationGenres(onCompletion: onCompletion)
+    }
+
+    public static func getRecommendations(parameters: RecommendationsParameters,
+                                          onCompletion: @escaping (SpotifyResult<RecommendationsResponse>) -> Void) {
+        browseService.getRecommendations(parameters: parameters, onCompletion: onCompletion)
     }
 }

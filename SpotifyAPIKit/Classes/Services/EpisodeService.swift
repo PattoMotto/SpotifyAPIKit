@@ -28,7 +28,7 @@ class EpisodeService {
 
     func getEpisode(id: String, market: Country? = nil, onCompletion: @escaping (SpotifyResult<Episode>) -> Void) {
         networkClient.request(url: SpotifyEndpoints.episodes + id,
-                              parameters: ["market": market?.rawValue],
+                              parameters: market?.queryParameters,
                               onCompletion: onCompletion)
     }
 }
