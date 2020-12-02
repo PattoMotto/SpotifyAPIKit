@@ -18,11 +18,7 @@ class NetworkClient {
         return HTTPHeaders([.authorization(bearerToken: authToken)])
     }
 
-    private let encoder: JSONParameterEncoder = {
-        let encoder = JSONEncoder()
-        encoder.keyEncodingStrategy = .convertToSnakeCase
-        return JSONParameterEncoder(encoder: encoder)
-    }()
+    private let encoder = URLEncodedFormParameterEncoder(encoder: URLEncodedFormEncoder(keyEncoding: .convertToSnakeCase))
 
     private let decoder: JSONDecoder = {
         let decoder = JSONDecoder()

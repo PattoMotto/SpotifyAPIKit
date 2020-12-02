@@ -8,6 +8,7 @@ import Foundation
 enum SpotifyEndpoints {
     private static let spotifyBaseURL = "https://api.spotify.com/v1/"
 
+    static let album = spotifyBaseURL + "albums/"
     static let search = spotifyBaseURL + "search/"
     static let tracks = spotifyBaseURL + "tracks/"
     static let audioFeatures = spotifyBaseURL + "audio-features/"
@@ -16,6 +17,10 @@ enum SpotifyEndpoints {
     static let myPlaylists = spotifyBaseURL + "me/playlists/"
     static let myProfile = spotifyBaseURL + "me/"
     static let userProfile = spotifyBaseURL + "users/"
+
+    static func albumTracks(albumId: String) -> String {
+        return spotifyBaseURL + "albums/\(albumId)/tracks/"
+    }
 
     static func userPlaylists(userId: String) -> String {
         return spotifyBaseURL + "users/\(userId)/playlists/"

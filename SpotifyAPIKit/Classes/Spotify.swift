@@ -11,6 +11,7 @@ public final class Spotify {
     static private let trackService = TrackService(with: networkClient)
     static private let playlistService = PlaylistService(with: networkClient)
     static private let userProfileService = UserProfileService(with: networkClient)
+    static private let albumService = AlbumService(with: networkClient)
 
     // Mark: - Authentication
 
@@ -100,5 +101,28 @@ public final class Spotify {
                                          parameters: parameters,
                                          pagingParameters: pagingParameters,
                                          onCompletion: onCompletion)
+    }
+
+    public static func getAlbums(ids: [String],
+                                 market: Country? = nil,
+                                 onCompletion: @escaping (SpotifyResult<[Album]>) -> Void) {
+        albumService.getAlbums(ids: ids, market: market, onCompletion: onCompletion)
+    }
+
+    public static func getAlbum(id: String,
+                                market: Country? = nil,
+                                onCompletion: @escaping (SpotifyResult<Album>) -> Void) {
+        albumService.getAlbum(id: id, market: market, onCompletion: onCompletion)
+    }
+
+    public static func getTracksInAlbum(id: String,
+                                        market: Country? = nil,
+                                        pagingParameters: PagingParameters? = nil,
+                                        onCompletion: @escaping (SpotifyResult<Paging<TrackSimplified>>) -> Void) {
+        albumService.getTracksInAlbum(id: id,
+                                      market: market,
+                                      pagingParameters: pagingParameters,
+                                      onCompletion: onCompletion
+        )
     }
 }

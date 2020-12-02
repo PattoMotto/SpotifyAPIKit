@@ -11,7 +11,7 @@ public enum AlbumType: String, Codable {
 
 public struct Album: Codable, Searchable, Equatable {
     public let albumType: AlbumType
-    public let artists: [Artist]
+    public let artists: [ArtistSimplified]
     public let availableMarkets: [Country]
     public let copyrights: [Copyright]
     public let externalIds: ExternalIds
@@ -26,6 +26,6 @@ public struct Album: Codable, Searchable, Equatable {
     public let releaseDate: String
     public let releaseDatePrecision: DatePrecision
     public let restrictions: Restriction?
-    public let tracks: [TrackSimplified]
+    public let tracks: Paging<TrackSimplified>
     public let uri: String
 }

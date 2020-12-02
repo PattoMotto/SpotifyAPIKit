@@ -7,7 +7,7 @@ import Foundation
 
 public struct TrackSimplified: Codable, Equatable {
     public let artists: [ArtistSimplified]
-    public let availableMarkets: [Country]
+    public let availableMarkets: [Country]? // FIXME: Issue with "albums/\(albumId)/tracks/"
     public let discNumber: Int
     public let durationMs: Int
     public let explicit: Bool

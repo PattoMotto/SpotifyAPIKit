@@ -13,10 +13,10 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        Spotify.setAuthToken("BQDppEnAIXbXA2OxYDCVBBfmnB7e3oB-NVHOqFph1DujJmWCxd9BRAKnA1CH8dPakZYNEzoYiB4wg2UoXoeBL-c4DEoIXm0RA30V3Dx9ab3MO1ixRFfPj_2z5HBO-yKK3tf1_O1AOD-imSG7WpKIbzyOapuHVnbCB7KQP73-7g")
-        //                Spotify.search(parameters: SearchParameters(q: "Taylor Swift", type: .album, includeExternal: "audio"), pagingParameters: PagingParameters(offset: 0, limit: 10)) { (result: SpotifyResult<Paging<AlbumSimplified>>) in
-        //                    print(result)
-        //                }
+        Spotify.setAuthToken("BQBBZ4Pub2m5uKnTvjklloVY1qtsMA5TsCX8vn0pQ7TuvNfcmeISIPPBjpk-FjOKtgGvJSC3_tkAuUUqjoE79tg1VCpIrhMrgtj3PsJfeMykXaqyAW0M95152Q82nJSgsnoOcNlGTrzk38vu4KOLBbcm4F4040bwMuuGVVnXjA")
+        //        Spotify.search(parameters: SearchParameters(q: "Taylor Swift", type: .album, includeExternal: "audio"), pagingParameters: PagingParameters(offset: 0, limit: 10)) { (result: SpotifyResult<Paging<AlbumSimplified>>) in
+        //            print(result)
+        //        }
         //
         //        Spotify.search(parameters: SearchParameters(q: "Taylor Swift", type: .artist)) { (result: SpotifyResult<Paging<Artist>>) in
         //            print(result)
@@ -79,6 +79,19 @@ class ViewController: UIViewController {
         //            print(result)
         //        }
         //
+        //        Spotify.getAlbums(ids: ["1NAmidJlEaVgA3MpcPFYGq", "2fenSS68JI1h4Fo296JfGr", "0PZ7lAru5FDFHuirTkWe9Z"]) { result in
+        //            print(result)
+        //        }
+        //
+        //        Spotify.getAlbum(id: "1NAmidJlEaVgA3MpcPFYGq") { result in
+        //            print(result)
+        //        }
+        //
+        //        Spotify.getTracksInAlbum(id: "1NAmidJlEaVgA3MpcPFYGq",
+        //                                 market: .unitedStates,
+        //                                 pagingParameters: PagingParameters(offset: 0, limit: 10)) { result in
+        //            print(result)
+        //        }
     }
 
     override func didReceiveMemoryWarning() {
