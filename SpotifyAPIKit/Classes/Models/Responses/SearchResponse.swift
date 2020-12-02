@@ -8,9 +8,9 @@ import Foundation
 public protocol Searchable: Codable & Equatable {}
 
 struct SearchResponse<T: Searchable>: Decodable {
-    public var searchResult: Pagination<T>
+    public var searchResult: Paging<T>
 
-    init(searchResult: Pagination<T>) {
+    init(searchResult: Paging<T>) {
         self.searchResult = searchResult
     }
 
@@ -26,15 +26,15 @@ struct SearchResponse<T: Searchable>: Decodable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         switch T.self {
         case is AlbumSimplified.Type:
-            self.searchResult = try container.decode(Pagination<T>.self, forKey: .albums)
+            self.searchResult = try container.decode(Paging<T>.self, forKey: .albums)
         case is Artist.Type:
-            self.searchResult = try container.decode(Pagination<T>.self, forKey: .artists)
+            self.searchResult = try container.decode(Paging<T>.self, forKey: .artists)
         case is Track.Type:
-            self.searchResult = try container.decode(Pagination<T>.self, forKey: .tracks)
+            self.searchResult = try container.decode(Paging<T>.self, forKey: .tracks)
         case is ShowSimplified.Type:
-            self.searchResult = try container.decode(Pagination<T>.self, forKey: .shows)
+            self.searchResult = try container.decode(Paging<T>.self, forKey: .shows)
         case is EpisodeSimplified.Type:
-            self.searchResult = try container.decode(Pagination<T>.self, forKey: .episodes)
+            self.searchResult = try container.decode(Paging<T>.self, forKey: .episodes)
         default:
             throw DecodingError.typeMismatch(T.self,
                                              .init(codingPath: CodingKeys.allCases, debugDescription: ""))

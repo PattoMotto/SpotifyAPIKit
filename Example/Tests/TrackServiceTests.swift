@@ -52,7 +52,7 @@ final class TrackServiceTests: QuickSpec {
                 }
                 context("when it fails") {
                     beforeEach {
-                        networkClient.mockedError = SpotifyError.invalidAccessToken
+                        networkClient.mockedError = SpotifyError.unauthorized("Invalid access token")
                         service.getTrack(id: "1234") { result in
                             data = result.value
                             error = result.error
@@ -111,7 +111,7 @@ final class TrackServiceTests: QuickSpec {
                 }
                 context("when it fails") {
                     beforeEach {
-                        networkClient.mockedError = SpotifyError.invalidAccessToken
+                        networkClient.mockedError = SpotifyError.unauthorized("Invalid access token")
                         service.getTracks(ids: ["1234", "ABCD"], market: "from_token") { result in
                             data = result.value
                             error = result.error
@@ -168,7 +168,7 @@ final class TrackServiceTests: QuickSpec {
                 }
                 context("when it fails") {
                     beforeEach {
-                        networkClient.mockedError = SpotifyError.invalidAccessToken
+                        networkClient.mockedError = SpotifyError.unauthorized("Invalid access token")
                         service.getAudioFeature(id: "1234") { result in
                             data = result.value
                             error = result.error
@@ -227,7 +227,7 @@ final class TrackServiceTests: QuickSpec {
                 }
                 context("when it fails") {
                     beforeEach {
-                        networkClient.mockedError = SpotifyError.invalidAccessToken
+                        networkClient.mockedError = SpotifyError.unauthorized("Invalid access token")
                         service.getAudioFeatures(ids: ["1234", "ABCD"]) { result in
                             data = result.value
                             error = result.error
@@ -283,7 +283,7 @@ final class TrackServiceTests: QuickSpec {
                     }
                     context("when it fails") {
                         beforeEach {
-                            networkClient.mockedError = SpotifyError.invalidAccessToken
+                            networkClient.mockedError = SpotifyError.unauthorized("Invalid access token")
                             service.getAudioAnalysis(id: "1234") { result in
                                 data = result.value
                                 error = result.error

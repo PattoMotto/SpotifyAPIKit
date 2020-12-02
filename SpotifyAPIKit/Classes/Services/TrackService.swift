@@ -18,7 +18,6 @@ class TrackService {
         var parameters: [String: String] = ["ids": ids.queryParameters]
         parameters["market"] = market
         networkClient.request(url: SpotifyEndpoints.tracks,
-                              method: .get,
                               parameters: parameters) { (result: SpotifyResult<TracksResponse>) in
             switch result {
             case .success(let value):
@@ -32,7 +31,6 @@ class TrackService {
     func getTrack(id: String,
                   onCompletion: @escaping (SpotifyResult<Track>) -> Void) {
         networkClient.request(url: SpotifyEndpoints.tracks + id,
-                              method: .get,
                               onCompletion: onCompletion)
     }
 
@@ -40,7 +38,6 @@ class TrackService {
                    onCompletion: @escaping (SpotifyResult<[AudioFeature]>) -> Void) {
         let parameters: [String: String] = ["ids": ids.queryParameters]
         networkClient.request(url: SpotifyEndpoints.audioFeatures,
-                              method: .get,
                               parameters: parameters) { (result: SpotifyResult<AudioFeturesResponse>) in
             switch result {
             case .success(let value):
@@ -54,14 +51,12 @@ class TrackService {
     func getAudioFeature(id: String,
                          onCompletion: @escaping (SpotifyResult<AudioFeature>) -> Void) {
         networkClient.request(url: SpotifyEndpoints.audioFeatures + id,
-                              method: .get,
                               onCompletion: onCompletion)
     }
 
     func getAudioAnalysis(id: String,
                           onCompletion: @escaping (SpotifyResult<AudioAnalysis>) -> Void) {
         networkClient.request(url: SpotifyEndpoints.audioAnalysis + id,
-                               method: .get,
                                onCompletion: onCompletion)
      }
 }

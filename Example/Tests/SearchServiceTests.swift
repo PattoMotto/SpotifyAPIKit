@@ -12,16 +12,73 @@ final class SearchServiceTests: QuickSpec {
         describe("SearchService") {
             var networkClient: NetworkClientMock!
             var service: SearchService!
+            let pagingParameters = PagingParameters(offset: 0, limit: 100)
 
             beforeEach {
                 networkClient = NetworkClientMock()
                 service = SearchService(with: networkClient)
             }
 
+            context("when request with all query parameters") {
+                let parameters = SearchParameters(q: "FOO", type: .album, market: .unitedStates, includeExternal: "audio")
+                beforeEach {
+                    service.search(parameters: parameters, pagingParameters: pagingParameters) { (_: SpotifyResult<Paging<AlbumSimplified>>) in }
+                }
+
+                it("should call with correct parameters") {
+                    expect(networkClient.calledRequestUrl) == "https://api.spotify.com/v1/search/"
+                    expect(networkClient.calledRequestMethod) == .get
+                    let queryParameters = networkClient.calledRequestParameters as? [String: Any]
+                    expect(queryParameters?["q"] as? String) == parameters.q
+                    expect(queryParameters?["type"] as? String) == parameters.type.rawValue
+                    expect(queryParameters?["market"] as? String) == parameters.market?.rawValue
+                    expect(queryParameters?["include_external"] as? String) == parameters.includeExternal
+                    expect(queryParameters?["offset"] as? Int) == 0
+                    expect(queryParameters?["limit"] as? Int) == 100
+                }
+            }
+
+            context("when request with minimal query parameters") {
+                let parameters = SearchParameters(q: "FOO", type: .album)
+                beforeEach {
+                    service.search(parameters: parameters) { (_: SpotifyResult<Paging<AlbumSimplified>>) in }
+                }
+
+                it("should call with correct parameters") {
+                    expect(networkClient.calledRequestUrl) == "https://api.spotify.com/v1/search/"
+                    expect(networkClient.calledRequestMethod) == .get
+                    let queryParameters = networkClient.calledRequestParameters as? [String: Any]
+                    expect(queryParameters?["q"] as? String) == parameters.q
+                    expect(queryParameters?["type"] as? String) == parameters.type.rawValue
+                    expect(queryParameters?["market"]).to(beNil())
+                    expect(queryParameters?["includeExternal"]).to(beNil())
+                    expect(queryParameters?["offset"]).to(beNil())
+                    expect(queryParameters?["limit"]).to(beNil())
+                }
+
+                context("when request with paging parameters") {
+                    beforeEach {
+                        service.search(parameters: parameters, pagingParameters: pagingParameters) { (_: SpotifyResult<Paging<AlbumSimplified>>) in }
+                    }
+
+                    it("should call with correct parameters") {
+                        expect(networkClient.calledRequestUrl) == "https://api.spotify.com/v1/search/"
+                        expect(networkClient.calledRequestMethod) == .get
+                        let queryParameters = networkClient.calledRequestParameters as? [String: Any]
+                        expect(queryParameters?["q"] as? String) == parameters.q
+                        expect(queryParameters?["type"] as? String) == parameters.type.rawValue
+                        expect(queryParameters?["market"]).to(beNil())
+                        expect(queryParameters?["includeExternal"]).to(beNil())
+                        expect(queryParameters?["offset"] as? Int) == 0
+                        expect(queryParameters?["limit"] as? Int) == 100
+                    }
+                }
+            }
+
             context("when search with album") {
-                var data: Pagination<AlbumSimplified>?
+                var data: Paging<AlbumSimplified>?
                 var error: Error?
-                let request = SearchRequest(q: "FOO", type: .album)
+                let parameters = SearchParameters(q: "FOO", type: .album)
 
                 beforeEach {
                     data = nil
@@ -30,18 +87,11 @@ final class SearchServiceTests: QuickSpec {
 
                 context("when it succeeds") {
                     beforeEach {
-                        networkClient.mockedSuccess = SearchResponse<AlbumSimplified>(searchResult: Pagination<AlbumSimplified>(items: [AlbumSimplified(id: "1")]))
-
-                        service.search(request: request) { (result: SpotifyResult<Pagination<AlbumSimplified>>) in
+                        networkClient.mockedSuccess = SearchResponse<AlbumSimplified>(searchResult: Paging<AlbumSimplified>(items: [AlbumSimplified(id: "1")]))
+                        service.search(parameters: parameters) { (result: SpotifyResult<Paging<AlbumSimplified>>) in
                             data = result.value
                             error = result.error
                         }
-                    }
-
-                    it("should call with correct parameters") {
-                        expect(networkClient.calledRequestUrl) == "https://api.spotify.com/v1/search/"
-                        expect(networkClient.calledRequestMethod) == .get
-                        expect(networkClient.calledRequestParameters as? SearchRequest) == request
                     }
 
                     it("should return correct data") {
@@ -54,18 +104,11 @@ final class SearchServiceTests: QuickSpec {
                 }
                 context("when it fails") {
                     beforeEach {
-                        networkClient.mockedError = SpotifyError.invalidAccessToken
-
-                        service.search(request: request) { (result: SpotifyResult<Pagination<AlbumSimplified>>) in
+                        networkClient.mockedError = SpotifyError.unauthorized("Invalid access token")
+                        service.search(parameters: parameters) { (result: SpotifyResult<Paging<AlbumSimplified>>) in
                             data = result.value
                             error = result.error
                         }
-                    }
-
-                    it("should call with correct parameters") {
-                        expect(networkClient.calledRequestUrl) == "https://api.spotify.com/v1/search/"
-                        expect(networkClient.calledRequestMethod) == .get
-                        expect(networkClient.calledRequestParameters as? SearchRequest) == request
                     }
 
                     it("should not return correct data") {
@@ -79,9 +122,9 @@ final class SearchServiceTests: QuickSpec {
             }
 
             context("when search with artist") {
-                var data: Pagination<Artist>?
+                var data: Paging<Artist>?
                 var error: Error?
-                let request = SearchRequest(q: "FOO", type: .artist)
+                let parameters = SearchParameters(q: "FOO", type: .artist)
 
                 beforeEach {
                     data = nil
@@ -90,18 +133,11 @@ final class SearchServiceTests: QuickSpec {
 
                 context("when it succeeds") {
                     beforeEach {
-                        networkClient.mockedSuccess = SearchResponse<Artist>(searchResult: Pagination<Artist>(items: [Artist(id: "1")]))
-
-                        service.search(request: request) { (result: SpotifyResult<Pagination<Artist>>) in
+                        networkClient.mockedSuccess = SearchResponse<Artist>(searchResult: Paging<Artist>(items: [Artist(id: "1")]))
+                        service.search(parameters: parameters) { (result: SpotifyResult<Paging<Artist>>) in
                             data = result.value
                             error = result.error
                         }
-                    }
-
-                    it("should call with correct parameters") {
-                        expect(networkClient.calledRequestUrl) == "https://api.spotify.com/v1/search/"
-                        expect(networkClient.calledRequestMethod) == .get
-                        expect(networkClient.calledRequestParameters as? SearchRequest) == request
                     }
 
                     it("should return correct data") {
@@ -114,18 +150,11 @@ final class SearchServiceTests: QuickSpec {
                 }
                 context("when it fails") {
                     beforeEach {
-                        networkClient.mockedError = SpotifyError.invalidAccessToken
-
-                        service.search(request: request) { (result: SpotifyResult<Pagination<Artist>>) in
+                        networkClient.mockedError = SpotifyError.unauthorized("Invalid access token")
+                        service.search(parameters: parameters) { (result: SpotifyResult<Paging<Artist>>) in
                             data = result.value
                             error = result.error
                         }
-                    }
-
-                    it("should call with correct parameters") {
-                        expect(networkClient.calledRequestUrl) == "https://api.spotify.com/v1/search/"
-                        expect(networkClient.calledRequestMethod) == .get
-                        expect(networkClient.calledRequestParameters as? SearchRequest) == request
                     }
 
                     it("should not return correct data") {
@@ -139,9 +168,9 @@ final class SearchServiceTests: QuickSpec {
             }
 
             context("when search with track") {
-                var data: Pagination<Track>?
+                var data: Paging<Track>?
                 var error: Error?
-                let request = SearchRequest(q: "FOO", type: .artist)
+                let parameters = SearchParameters(q: "FOO", type: .artist)
 
                 beforeEach {
                     data = nil
@@ -150,18 +179,11 @@ final class SearchServiceTests: QuickSpec {
 
                 context("when it succeeds") {
                     beforeEach {
-                        networkClient.mockedSuccess = SearchResponse<Track>(searchResult: Pagination<Track>(items: [Track(id: "1")]))
-
-                        service.search(request: request) { (result: SpotifyResult<Pagination<Track>>) in
+                        networkClient.mockedSuccess = SearchResponse<Track>(searchResult: Paging<Track>(items: [Track(id: "1")]))
+                        service.search(parameters: parameters) { (result: SpotifyResult<Paging<Track>>) in
                             data = result.value
                             error = result.error
                         }
-                    }
-
-                    it("should call with correct parameters") {
-                        expect(networkClient.calledRequestUrl) == "https://api.spotify.com/v1/search/"
-                        expect(networkClient.calledRequestMethod) == .get
-                        expect(networkClient.calledRequestParameters as? SearchRequest) == request
                     }
 
                     it("should return correct data") {
@@ -174,18 +196,11 @@ final class SearchServiceTests: QuickSpec {
                 }
                 context("when it fails") {
                     beforeEach {
-                        networkClient.mockedError = SpotifyError.invalidAccessToken
-
-                        service.search(request: request) { (result: SpotifyResult<Pagination<Track>>) in
+                        networkClient.mockedError = SpotifyError.unauthorized("Invalid access token")
+                        service.search(parameters: parameters) { (result: SpotifyResult<Paging<Track>>) in
                             data = result.value
                             error = result.error
                         }
-                    }
-
-                    it("should call with correct parameters") {
-                        expect(networkClient.calledRequestUrl) == "https://api.spotify.com/v1/search/"
-                        expect(networkClient.calledRequestMethod) == .get
-                        expect(networkClient.calledRequestParameters as? SearchRequest) == request
                     }
 
                     it("should not return correct data") {
@@ -199,9 +214,9 @@ final class SearchServiceTests: QuickSpec {
             }
 
             context("when search with show") {
-                var data: Pagination<ShowSimplified>?
+                var data: Paging<ShowSimplified>?
                 var error: Error?
-                let request = SearchRequest(q: "FOO", type: .show)
+                let parameters = SearchParameters(q: "FOO", type: .show)
 
                 beforeEach {
                     data = nil
@@ -210,18 +225,11 @@ final class SearchServiceTests: QuickSpec {
 
                 context("when it succeeds") {
                     beforeEach {
-                        networkClient.mockedSuccess = SearchResponse<ShowSimplified>(searchResult: Pagination<ShowSimplified>(items: [ShowSimplified(id: "1")]))
-
-                        service.search(request: request) { (result: SpotifyResult<Pagination<ShowSimplified>>) in
+                        networkClient.mockedSuccess = SearchResponse<ShowSimplified>(searchResult: Paging<ShowSimplified>(items: [ShowSimplified(id: "1")]))
+                        service.search(parameters: parameters) { (result: SpotifyResult<Paging<ShowSimplified>>) in
                             data = result.value
                             error = result.error
                         }
-                    }
-
-                    it("should call with correct parameters") {
-                        expect(networkClient.calledRequestUrl) == "https://api.spotify.com/v1/search/"
-                        expect(networkClient.calledRequestMethod) == .get
-                        expect(networkClient.calledRequestParameters as? SearchRequest) == request
                     }
 
                     it("should return correct data") {
@@ -234,18 +242,11 @@ final class SearchServiceTests: QuickSpec {
                 }
                 context("when it fails") {
                     beforeEach {
-                        networkClient.mockedError = SpotifyError.invalidAccessToken
-
-                        service.search(request: request) { (result: SpotifyResult<Pagination<ShowSimplified>>) in
+                        networkClient.mockedError = SpotifyError.unauthorized("Invalid access token")
+                        service.search(parameters: parameters) { (result: SpotifyResult<Paging<ShowSimplified>>) in
                             data = result.value
                             error = result.error
                         }
-                    }
-
-                    it("should call with correct parameters") {
-                        expect(networkClient.calledRequestUrl) == "https://api.spotify.com/v1/search/"
-                        expect(networkClient.calledRequestMethod) == .get
-                        expect(networkClient.calledRequestParameters as? SearchRequest) == request
                     }
 
                     it("should not return correct data") {
@@ -259,9 +260,9 @@ final class SearchServiceTests: QuickSpec {
             }
 
             context("when search with episode") {
-                var data: Pagination<EpisodeSimplified>?
+                var data: Paging<EpisodeSimplified>?
                 var error: Error?
-                let request = SearchRequest(q: "FOO", type: .show)
+                let parameters = SearchParameters(q: "FOO", type: .show)
 
                 beforeEach {
                     data = nil
@@ -270,18 +271,11 @@ final class SearchServiceTests: QuickSpec {
 
                 context("when it succeeds") {
                     beforeEach {
-                        networkClient.mockedSuccess = SearchResponse<EpisodeSimplified>(searchResult: Pagination<EpisodeSimplified>(items: [EpisodeSimplified(id: "1")]))
-
-                        service.search(request: request) { (result: SpotifyResult<Pagination<EpisodeSimplified>>) in
+                        networkClient.mockedSuccess = SearchResponse<EpisodeSimplified>(searchResult: Paging<EpisodeSimplified>(items: [EpisodeSimplified(id: "1")]))
+                        service.search(parameters: parameters) { (result: SpotifyResult<Paging<EpisodeSimplified>>) in
                             data = result.value
                             error = result.error
                         }
-                    }
-
-                    it("should call with correct parameters") {
-                        expect(networkClient.calledRequestUrl) == "https://api.spotify.com/v1/search/"
-                        expect(networkClient.calledRequestMethod) == .get
-                        expect(networkClient.calledRequestParameters as? SearchRequest) == request
                     }
 
                     it("should return correct data") {
@@ -294,18 +288,11 @@ final class SearchServiceTests: QuickSpec {
                 }
                 context("when it fails") {
                     beforeEach {
-                        networkClient.mockedError = SpotifyError.invalidAccessToken
-
-                        service.search(request: request) { (result: SpotifyResult<Pagination<EpisodeSimplified>>) in
+                        networkClient.mockedError = SpotifyError.unauthorized("Invalid access token")
+                        service.search(parameters: parameters) { (result: SpotifyResult<Paging<EpisodeSimplified>>) in
                             data = result.value
                             error = result.error
                         }
-                    }
-
-                    it("should call with correct parameters") {
-                        expect(networkClient.calledRequestUrl) == "https://api.spotify.com/v1/search/"
-                        expect(networkClient.calledRequestMethod) == .get
-                        expect(networkClient.calledRequestParameters as? SearchRequest) == request
                     }
 
                     it("should not return correct data") {

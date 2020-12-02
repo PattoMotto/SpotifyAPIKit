@@ -14,9 +14,9 @@ public struct Playlist: Codable, Equatable {
     let id: String
     let images: [Image]
     let name: String
-    let owner: PublicUser
+    let owner: UserSimplified
     let `public`: Bool?
     let snapshotId: String
-    let tracks: Pagination<PlaylistTrack>
+    let tracks: Paging<PlaylistTrack>
     let uri: String
 }

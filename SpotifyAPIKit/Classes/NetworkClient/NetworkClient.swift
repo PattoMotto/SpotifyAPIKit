@@ -7,7 +7,7 @@ import Foundation
 import Alamofire
 
 enum NetworkRequestMethod {
-    case get, delete, post, patch
+    case get, delete, post, put, patch
 }
 
 typealias Parameters = [String: Any]
@@ -17,6 +17,12 @@ class NetworkClient {
         guard let authToken = authToken else { return nil}
         return HTTPHeaders([.authorization(bearerToken: authToken)])
     }
+
+    private let encoder: JSONParameterEncoder = {
+        let encoder = JSONEncoder()
+        encoder.keyEncodingStrategy = .convertToSnakeCase
+        return JSONParameterEncoder(encoder: encoder)
+    }()
 
     private let decoder: JSONDecoder = {
         let decoder = JSONDecoder()
@@ -39,7 +45,7 @@ class NetworkClient {
     }
 
     func request<Result>(url: String,
-                         method: NetworkRequestMethod,
+                         method: NetworkRequestMethod = .get,
                          parameters: Parameters? = nil,
                          onCompletion: @escaping (SpotifyResult<Result>) -> Void) where Result : Decodable {
         session.request(url, method: method.httpMethod, parameters: parameters, headers: header)
@@ -48,11 +54,25 @@ class NetworkClient {
             }
     }
 
+    func request<Parameters>(url: String,
+                             method: NetworkRequestMethod = .get,
+                             parameters: Parameters?,
+                             onCompletion: @escaping (SpotifyResult<Void>) -> Void) where Parameters : Encodable {
+        request(url: url, method: method, parameters: parameters) { (result: SpotifyResult<EmptyResponse>) in
+            switch result {
+            case .success:
+                onCompletion(.success(()))
+            case .failure(let error):
+                onCompletion(.failure(error))
+            }
+        }
+    }
+
     func request<Parameters, Result>(url: String,
-                                     method: NetworkRequestMethod,
+                                     method: NetworkRequestMethod = .get,
                                      parameters: Parameters?,
                                      onCompletion: @escaping (SpotifyResult<Result>) -> Void) where Parameters : Encodable, Result : Decodable {
-        session.request(url, method: method.httpMethod, parameters: parameters, headers: header)
+        session.request(url, method: method.httpMethod, parameters: parameters, encoder: encoder, headers: header)
             .responseDecodable(of: Result.self, decoder: decoder) { [weak self] (response: DataResponse<Result, AFError>) in
                 self?.handleResponse(response: response, onCompletion: onCompletion)
             }
@@ -63,7 +83,7 @@ class NetworkClient {
         switch response.result {
         case .success(let value):
             onCompletion(.success(value))
-        case .failure(AFError.responseSerializationFailed(reason: .decodingFailed(error: let error))) where response.response?.statusCode != 200:
+        case .failure(AFError.responseSerializationFailed(reason: .decodingFailed(error: let error))) where response.response?.statusCode ?? 0 >= 300:
             guard let data = response.data,
                   let rawError = try? decoder.decode(SpotifyErrorResponse.self, from: data) else {
                 onCompletion(.failure(.apiError(error)))
@@ -85,6 +105,8 @@ private extension NetworkRequestMethod {
             return .delete
         case .post:
             return .post
+        case .put:
+            return .put
         case .patch:
             return .patch
         }

@@ -16,5 +16,5 @@ public struct PrivateUser: Codable, Equatable {
     let id: String
     let images: [Image]
     let product: String?
-    let url: String
+    let uri: String
 }

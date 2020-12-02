@@ -12,5 +12,5 @@ public struct PublicUser: Codable, Equatable {
     let href: String
     let id: String
     let images: [Image]
-    let url: String
+    let uri: String
 }

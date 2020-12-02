@@ -1,12 +1,12 @@
 //
-//  Pagination+Mock.swift
+//  Paging+Mock.swift
 //  Created by PattoMotto on 01/12/2020.
 //  
 
 import Foundation
 @testable import SpotifyAPIKit
 
-extension Pagination where T: Codable {
+extension Paging where T: Codable {
     init(items: [T]) {
         self.init(items: items,
                   href: "",

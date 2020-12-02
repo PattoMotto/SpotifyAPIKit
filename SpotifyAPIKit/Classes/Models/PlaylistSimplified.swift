@@ -13,10 +13,10 @@ public struct PlaylistSimplified: Codable, Equatable {
     let id: String
     let images: [Image]
     let name: String
-//    let owner: User TODO: Add User
+    let owner: UserSimplified
     let `public`: Bool?
     let snapshotId: String
-//    let tracks: Pagination<PlaylistTrack> TODO: Add PlaylistTrack
+    let tracks: PlaylistTrackPagingSimplified
     let uri: String
 }
 

@@ -16,7 +16,7 @@
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		77EFFB6C257680E000F00656 /* SearchServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EFFB6B257680E000F00656 /* SearchServiceTests.swift */; };
 		77EFFB732576813700F00656 /* NetworkClientMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EFFB722576813700F00656 /* NetworkClientMock.swift */; };
-		77EFFB7925768BC000F00656 /* Pagination+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EFFB7825768BC000F00656 /* Pagination+Mock.swift */; };
+		77EFFB7925768BC000F00656 /* Paging+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EFFB7825768BC000F00656 /* Paging+Mock.swift */; };
 		77EFFB7F25768DCF00F00656 /* AlbumSimplified+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EFFB7E25768DCF00F00656 /* AlbumSimplified+Mock.swift */; };
 		77EFFB9125769B5700F00656 /* Artist+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EFFB9025769B5700F00656 /* Artist+Mock.swift */; };
 		77EFFB9525769C1D00F00656 /* Track+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EFFB9425769C1D00F00656 /* Track+Mock.swift */; };
@@ -25,6 +25,13 @@
 		77EFFC252576C57C00F00656 /* TrackServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EFFC242576C57C00F00656 /* TrackServiceTests.swift */; };
 		77EFFC292576C84100F00656 /* AudioFeature+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EFFC282576C84100F00656 /* AudioFeature+Mock.swift */; };
 		77EFFC412576CA9600F00656 /* AudioAnalysis+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EFFC402576CA9600F00656 /* AudioAnalysis+Mock.swift */; };
+		77EFFD512577CCA400F00656 /* UserProfileServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EFFD502577CCA400F00656 /* UserProfileServiceTests.swift */; };
+		77EFFD552577CCBB00F00656 /* PlaylistServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EFFD542577CCBB00F00656 /* PlaylistServiceTests.swift */; };
+		77EFFD592577CD4800F00656 /* PrivateUser+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EFFD582577CD4800F00656 /* PrivateUser+Mock.swift */; };
+		77EFFD5D2577CE3C00F00656 /* PlaylistSimplified+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EFFD5C2577CE3C00F00656 /* PlaylistSimplified+Mock.swift */; };
+		77EFFD612577CF7C00F00656 /* PublicUser+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EFFD602577CF7C00F00656 /* PublicUser+Mock.swift */; };
+		77EFFD652577D07900F00656 /* Playlist+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EFFD642577D07900F00656 /* Playlist+Mock.swift */; };
+		77EFFD692577D22000F00656 /* PlaylistTrack+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EFFD682577D22000F00656 /* PlaylistTrack+Mock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,7 +61,7 @@
 		6D114F3266E3E2AAC3BE1023 /* SpotifyAPIKit.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = SpotifyAPIKit.podspec; path = ../SpotifyAPIKit.podspec; sourceTree = "<group>"; };
 		77EFFB6B257680E000F00656 /* SearchServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchServiceTests.swift; sourceTree = "<group>"; };
 		77EFFB722576813700F00656 /* NetworkClientMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClientMock.swift; sourceTree = "<group>"; };
-		77EFFB7825768BC000F00656 /* Pagination+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pagination+Mock.swift"; sourceTree = "<group>"; };
+		77EFFB7825768BC000F00656 /* Paging+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Paging+Mock.swift"; sourceTree = "<group>"; };
 		77EFFB7E25768DCF00F00656 /* AlbumSimplified+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AlbumSimplified+Mock.swift"; sourceTree = "<group>"; };
 		77EFFB9025769B5700F00656 /* Artist+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Artist+Mock.swift"; sourceTree = "<group>"; };
 		77EFFB9425769C1D00F00656 /* Track+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Track+Mock.swift"; sourceTree = "<group>"; };
@@ -63,6 +70,13 @@
 		77EFFC242576C57C00F00656 /* TrackServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackServiceTests.swift; sourceTree = "<group>"; };
 		77EFFC282576C84100F00656 /* AudioFeature+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AudioFeature+Mock.swift"; sourceTree = "<group>"; };
 		77EFFC402576CA9600F00656 /* AudioAnalysis+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AudioAnalysis+Mock.swift"; sourceTree = "<group>"; };
+		77EFFD502577CCA400F00656 /* UserProfileServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileServiceTests.swift; sourceTree = "<group>"; };
+		77EFFD542577CCBB00F00656 /* PlaylistServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistServiceTests.swift; sourceTree = "<group>"; };
+		77EFFD582577CD4800F00656 /* PrivateUser+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PrivateUser+Mock.swift"; sourceTree = "<group>"; };
+		77EFFD5C2577CE3C00F00656 /* PlaylistSimplified+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlaylistSimplified+Mock.swift"; sourceTree = "<group>"; };
+		77EFFD602577CF7C00F00656 /* PublicUser+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PublicUser+Mock.swift"; sourceTree = "<group>"; };
+		77EFFD642577D07900F00656 /* Playlist+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Playlist+Mock.swift"; sourceTree = "<group>"; };
+		77EFFD682577D22000F00656 /* PlaylistTrack+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlaylistTrack+Mock.swift"; sourceTree = "<group>"; };
 		9DF9D49E68C18D11BD392800 /* Pods-SpotifyAPIKit_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpotifyAPIKit_Example.release.xcconfig"; path = "Target Support Files/Pods-SpotifyAPIKit_Example/Pods-SpotifyAPIKit_Example.release.xcconfig"; sourceTree = "<group>"; };
 		9F9CCCAC32E97C750AE014C6 /* Pods_SpotifyAPIKit_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpotifyAPIKit_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED50919FDF93A875CFC0F8C6 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
@@ -148,6 +162,8 @@
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 				77EFFB6B257680E000F00656 /* SearchServiceTests.swift */,
 				77EFFC242576C57C00F00656 /* TrackServiceTests.swift */,
+				77EFFD502577CCA400F00656 /* UserProfileServiceTests.swift */,
+				77EFFD542577CCBB00F00656 /* PlaylistServiceTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -174,7 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				77EFFB722576813700F00656 /* NetworkClientMock.swift */,
-				77EFFB7825768BC000F00656 /* Pagination+Mock.swift */,
+				77EFFB7825768BC000F00656 /* Paging+Mock.swift */,
 				77EFFB7E25768DCF00F00656 /* AlbumSimplified+Mock.swift */,
 				77EFFB9025769B5700F00656 /* Artist+Mock.swift */,
 				77EFFB9425769C1D00F00656 /* Track+Mock.swift */,
@@ -182,6 +198,11 @@
 				77EFFB9C25769C4700F00656 /* EpisodeSimplified+Mock.swift */,
 				77EFFC282576C84100F00656 /* AudioFeature+Mock.swift */,
 				77EFFC402576CA9600F00656 /* AudioAnalysis+Mock.swift */,
+				77EFFD582577CD4800F00656 /* PrivateUser+Mock.swift */,
+				77EFFD5C2577CE3C00F00656 /* PlaylistSimplified+Mock.swift */,
+				77EFFD602577CF7C00F00656 /* PublicUser+Mock.swift */,
+				77EFFD642577D07900F00656 /* Playlist+Mock.swift */,
+				77EFFD682577D22000F00656 /* PlaylistTrack+Mock.swift */,
 			);
 			name = Mocks;
 			sourceTree = "<group>";
@@ -401,17 +422,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77EFFD592577CD4800F00656 /* PrivateUser+Mock.swift in Sources */,
 				77EFFB9925769C3300F00656 /* ShowSimplified+Mock.swift in Sources */,
 				77EFFB732576813700F00656 /* NetworkClientMock.swift in Sources */,
+				77EFFD692577D22000F00656 /* PlaylistTrack+Mock.swift in Sources */,
+				77EFFD612577CF7C00F00656 /* PublicUser+Mock.swift in Sources */,
 				77EFFB9D25769C4700F00656 /* EpisodeSimplified+Mock.swift in Sources */,
-				77EFFB7925768BC000F00656 /* Pagination+Mock.swift in Sources */,
+				77EFFB7925768BC000F00656 /* Paging+Mock.swift in Sources */,
+				77EFFD512577CCA400F00656 /* UserProfileServiceTests.swift in Sources */,
 				77EFFB7F25768DCF00F00656 /* AlbumSimplified+Mock.swift in Sources */,
 				77EFFB9125769B5700F00656 /* Artist+Mock.swift in Sources */,
 				77EFFC252576C57C00F00656 /* TrackServiceTests.swift in Sources */,
 				77EFFC292576C84100F00656 /* AudioFeature+Mock.swift in Sources */,
 				77EFFB9525769C1D00F00656 /* Track+Mock.swift in Sources */,
+				77EFFD552577CCBB00F00656 /* PlaylistServiceTests.swift in Sources */,
+				77EFFD5D2577CE3C00F00656 /* PlaylistSimplified+Mock.swift in Sources */,
 				77EFFC412576CA9600F00656 /* AudioAnalysis+Mock.swift in Sources */,
 				77EFFB6C257680E000F00656 /* SearchServiceTests.swift in Sources */,
+				77EFFD652577D07900F00656 /* Playlist+Mock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,11 +12,13 @@ class SearchService {
         self.networkClient = networkClient
     }
 
-    func search<T: Searchable>(request: SearchRequest,
-                   onCompletion: @escaping (SpotifyResult<Pagination<T>>) -> Void) {
+    func search<T: Searchable>(parameters: SearchParameters,
+                               pagingParameters: PagingParameters? = nil,
+                               onCompletion: @escaping (SpotifyResult<Paging<T>>) -> Void) {
+        var parameters = parameters.dictionary ?? [String: Any]()
+        pagingParameters?.dictionary?.forEach { parameters[$0.key] = $0.value }
         networkClient.request(url: SpotifyEndpoints.search,
-                              method: .get,
-                              parameters: request) { (result: SpotifyResult<SearchResponse<T>>) in
+                              parameters: parameters) { (result: SpotifyResult<SearchResponse<T>>) in
             switch result {
             case .success(let value):
                 onCompletion(.success(value.searchResult))

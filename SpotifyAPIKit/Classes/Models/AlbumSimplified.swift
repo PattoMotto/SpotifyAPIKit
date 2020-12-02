@@ -8,7 +8,7 @@ import Foundation
 public struct AlbumSimplified: Codable, Searchable, Equatable {
     public let albumType: AlbumType
     public let artists: [ArtistSimplified]
-    public let availableMarkets: [Country]
+    public let availableMarkets: [Country]? // FIXME: Issue with "playlists/\(playlistId)/tracks"
     public let externalUrls: ExternalUrl
     public let href: String
     public let id: String
