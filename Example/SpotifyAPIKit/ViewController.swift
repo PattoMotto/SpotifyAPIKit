@@ -13,7 +13,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        Spotify.setAuthToken("BQBBZ4Pub2m5uKnTvjklloVY1qtsMA5TsCX8vn0pQ7TuvNfcmeISIPPBjpk-FjOKtgGvJSC3_tkAuUUqjoE79tg1VCpIrhMrgtj3PsJfeMykXaqyAW0M95152Q82nJSgsnoOcNlGTrzk38vu4KOLBbcm4F4040bwMuuGVVnXjA")
+        Spotify.setAuthToken("BQAAtiuXexhT8FpK2C2YTYCsL3z9ZcqzCoqMN-JRTfle5XB6fzRoaBL35Yw9l_Jr7atYnIaLRO8PH9aHXL8h-N-0kxjtq37IYGyKWig6D28X96Msax09xiFu4ASl2xTrLCnsQvGP3KIexvTKObuDHyUFZFLTG7iMv3ipMEkZ3g")
         //        Spotify.search(parameters: SearchParameters(q: "Taylor Swift", type: .album, includeExternal: "audio"), pagingParameters: PagingParameters(offset: 0, limit: 10)) { (result: SpotifyResult<Paging<AlbumSimplified>>) in
         //            print(result)
         //        }
@@ -90,6 +90,16 @@ class ViewController: UIViewController {
         //        Spotify.getTracksInAlbum(id: "1NAmidJlEaVgA3MpcPFYGq",
         //                                 market: .unitedStates,
         //                                 pagingParameters: PagingParameters(offset: 0, limit: 10)) { result in
+        //            print(result)
+        //        }
+        //
+        //        Spotify.getEpisodes(ids: ["54BCGBcK7A1BY9NHDm4mMF", "5RacHuT007wp9c9n3BOs9z"],
+        //                            market: .unitedStates) { result in
+        //            print(result)
+        //        }
+        //
+        //        Spotify.getEpisode(id: "54BCGBcK7A1BY9NHDm4mMF",
+        //                           market: .unitedStates) { result in
         //            print(result)
         //        }
     }

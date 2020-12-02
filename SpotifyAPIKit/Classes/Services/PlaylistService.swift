@@ -24,7 +24,7 @@ class PlaylistService {
     func getUserPlaylists(userId: String,
                           pagingParameters: PagingParameters? = nil,
                           onCompletion: @escaping (SpotifyResult<Paging<PlaylistSimplified>>) -> Void) {
-        networkClient.request(url: SpotifyEndpoints.userPlaylists(userId: userId),
+        networkClient.request(url: SpotifyEndpoints.usersPlaylists(userId: userId),
                               parameters: pagingParameters,
                               onCompletion: onCompletion)
     }
@@ -32,21 +32,21 @@ class PlaylistService {
     func createPlaylist(userId: String,
                         parameters: PlaylistParameters,
                         onCompletion: @escaping (SpotifyResult<Playlist>) -> Void) {
-        networkClient.request(url: SpotifyEndpoints.userPlaylists(userId: userId),
+        networkClient.request(url: SpotifyEndpoints.usersPlaylists(userId: userId),
                               method: .post,
                               parameters: parameters,
                               onCompletion: onCompletion)
     }
 
     func getPlaylist(id: String, onCompletion: @escaping (SpotifyResult<Playlist>) -> Void) {
-        networkClient.request(url: SpotifyEndpoints.playlist + id,
+        networkClient.request(url: SpotifyEndpoints.playlists + id,
                               onCompletion: onCompletion)
     }
 
     func updatePlaylist(id: String,
                         parameters: PlaylistParameters,
                         onCompletion: @escaping (SpotifyResult<Void>) -> Void) {
-        networkClient.request(url: SpotifyEndpoints.playlist + id,
+        networkClient.request(url: SpotifyEndpoints.playlists + id,
                               method: .put,
                               parameters: parameters,
                               onCompletion: onCompletion)
@@ -58,7 +58,7 @@ class PlaylistService {
                           onCompletion: @escaping (SpotifyResult<Paging<PlaylistTrack>>) -> Void) {
         var parameters = parameters.dictionary ?? [String: Any]()
         pagingParameters?.dictionary?.forEach { parameters[$0.key] = $0.value }
-        networkClient.request(url: SpotifyEndpoints.playlistItems(playlistId: id),
+        networkClient.request(url: SpotifyEndpoints.playlistsItems(playlistId: id),
                               parameters: parameters,
                               onCompletion: onCompletion)
     }
@@ -66,7 +66,7 @@ class PlaylistService {
     func addItemsToPlaylist(id: String,
                             parameters: CreateItemParameters,
                             onCompletion: @escaping (SpotifyResult<Snapshot>) -> Void) {
-        networkClient.request(url: SpotifyEndpoints.playlistItems(playlistId: id),
+        networkClient.request(url: SpotifyEndpoints.playlistsItems(playlistId: id),
                               method: .post,
                               parameters: parameters,
                               onCompletion: onCompletion)
@@ -75,7 +75,7 @@ class PlaylistService {
     func replaceItemsInPlaylist(id: String,
                                 parameters: ReplaceItemParameters,
                                 onCompletion: @escaping (SpotifyResult<Snapshot>) -> Void) {
-        networkClient.request(url: SpotifyEndpoints.playlistItems(playlistId: id),
+        networkClient.request(url: SpotifyEndpoints.playlistsItems(playlistId: id),
                               method: .put,
                               parameters: parameters,
                               onCompletion: onCompletion)
@@ -84,19 +84,19 @@ class PlaylistService {
     func removeItemsInPlaylist(id: String,
                                parameters: RemoveItemParameters,
                                onCompletion: @escaping (SpotifyResult<Snapshot>) -> Void) {
-        networkClient.request(url: SpotifyEndpoints.playlistItems(playlistId: id),
+        networkClient.request(url: SpotifyEndpoints.playlistsItems(playlistId: id),
                               method: .delete,
                               parameters: parameters,
                               onCompletion: onCompletion)
     }
 
     func getPlalistCoverImage(id: String, onCompletion: @escaping (SpotifyResult<Image>) -> Void) {
-        networkClient.request(url: SpotifyEndpoints.playlistCoverImage(plalistId: id),
+        networkClient.request(url: SpotifyEndpoints.playlistsImages(plalistId: id),
                               onCompletion: onCompletion)
     }
 
     // TODO: Implement this
     func updatePlaylistCoverImage(id: String, onCompletion: @escaping (SpotifyResult<Void>) -> Void) {
-        //        SpotifyEndpoints.playlistCoverImage(plalistId: id)
+        //        SpotifyEndpoints.playlistsImages(plalistId: id)
     }
 }

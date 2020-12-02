@@ -15,7 +15,7 @@ class AlbumService {
     func getAlbums(ids: [String], market: Country? = nil, onCompletion: @escaping (SpotifyResult<[Album]>) -> Void) {
         var parameters = ["ids": ids.queryParameters]
         parameters["market"] = market?.rawValue
-        networkClient.request(url: SpotifyEndpoints.album,
+        networkClient.request(url: SpotifyEndpoints.albums,
                               parameters: parameters) { (result: SpotifyResult<AlbumsResponse>) in
             switch result {
             case .success(let value):
@@ -27,7 +27,7 @@ class AlbumService {
     }
 
     func getAlbum(id: String, market: Country? = nil, onCompletion: @escaping (SpotifyResult<Album>) -> Void) {
-        networkClient.request(url: SpotifyEndpoints.album + id,
+        networkClient.request(url: SpotifyEndpoints.albums + id,
                               parameters: ["market": market?.rawValue],
                               onCompletion: onCompletion)
     }
@@ -39,7 +39,7 @@ class AlbumService {
         var parameters = [String: Any]()
         parameters["market"] = market?.rawValue
         pagingParameters?.dictionary?.forEach { parameters[$0.key] = $0.value }
-        networkClient.request(url: SpotifyEndpoints.albumTracks(albumId: id),
+        networkClient.request(url: SpotifyEndpoints.albumsTracks(albumId: id),
                               parameters: parameters,
                               onCompletion: onCompletion)
     }

@@ -8,29 +8,30 @@ import Foundation
 enum SpotifyEndpoints {
     private static let spotifyBaseURL = "https://api.spotify.com/v1/"
 
-    static let album = spotifyBaseURL + "albums/"
+    static let albums = spotifyBaseURL + "albums/"
     static let search = spotifyBaseURL + "search/"
     static let tracks = spotifyBaseURL + "tracks/"
+    static let episodes = spotifyBaseURL + "episodes/"
     static let audioFeatures = spotifyBaseURL + "audio-features/"
     static let audioAnalysis = spotifyBaseURL + "audio-analysis/"
-    static let playlist = spotifyBaseURL + "playlists/"
+    static let playlists = spotifyBaseURL + "playlists/"
     static let myPlaylists = spotifyBaseURL + "me/playlists/"
     static let myProfile = spotifyBaseURL + "me/"
     static let userProfile = spotifyBaseURL + "users/"
 
-    static func albumTracks(albumId: String) -> String {
+    static func albumsTracks(albumId: String) -> String {
         return spotifyBaseURL + "albums/\(albumId)/tracks/"
     }
 
-    static func userPlaylists(userId: String) -> String {
+    static func usersPlaylists(userId: String) -> String {
         return spotifyBaseURL + "users/\(userId)/playlists/"
     }
 
-    static func playlistItems(playlistId: String) -> String {
+    static func playlistsItems(playlistId: String) -> String {
         return spotifyBaseURL + "playlists/\(playlistId)/tracks/"
     }
 
-    static func playlistCoverImage(plalistId: String) -> String {
+    static func playlistsImages(plalistId: String) -> String {
         return spotifyBaseURL + "playlists/\(plalistId)/images/"
     }
 }

@@ -12,7 +12,8 @@ public final class Spotify {
     static private let playlistService = PlaylistService(with: networkClient)
     static private let userProfileService = UserProfileService(with: networkClient)
     static private let albumService = AlbumService(with: networkClient)
-
+    static private let episodeService = EpisodeService(with: networkClient)
+    
     // Mark: - Authentication
 
     public static func setAuthToken(_ token: String) {
@@ -124,5 +125,13 @@ public final class Spotify {
                                       pagingParameters: pagingParameters,
                                       onCompletion: onCompletion
         )
+    }
+
+    public static func getEpisodes(ids: [String], market: Country? = nil, onCompletion: @escaping (SpotifyResult<[Episode]>) -> Void) {
+        episodeService.getEpisodes(ids: ids, market: market, onCompletion: onCompletion)
+    }
+
+    public static func getEpisode(id: String, market: Country? = nil, onCompletion: @escaping (SpotifyResult<Episode>) -> Void) {
+        episodeService.getEpisode(id: id, market: market, onCompletion: onCompletion)
     }
 }
