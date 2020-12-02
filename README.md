@@ -13,15 +13,15 @@ The [Spotify Web API](https://developer.spotify.com/documentation/web-api) for i
 - [x] [Search API](https://developer.spotify.com/documentation/web-api/reference-beta/#category-search)
 - [ ] [Browse API](https://developer.spotify.com/documentation/web-api/reference-beta/#category-browse)
 - [ ] [Follow API](https://developer.spotify.com/documentation/web-api/reference-beta/#category-follow)
-- [ ] [Playlists API](https://developer.spotify.com/documentation/web-api/reference-beta/#category-playlists)
+- [x] [Playlists API](https://developer.spotify.com/documentation/web-api/reference-beta/#category-playlists)
 - [ ] [Library API](https://developer.spotify.com/documentation/web-api/reference-beta/#category-library)
 - [ ] [Artists API](https://developer.spotify.com/documentation/web-api/reference-beta/#category-artists)
 - [ ] [Player API](https://developer.spotify.com/documentation/web-api/reference-beta/#category-player)
 - [ ] [Personalization API](https://developer.spotify.com/documentation/web-api/reference-beta/#category-personalization)
 - [ ] [User Profile API](https://developer.spotify.com/documentation/web-api/reference-beta/#category-users-profile)
-- [ ] [Albums API](https://developer.spotify.com/documentation/web-api/reference-beta/#category-albums)
+- [x] [Albums API](https://developer.spotify.com/documentation/web-api/reference-beta/#category-albums)
 - [x] [Tracks API](https://developer.spotify.com/documentation/web-api/reference-beta/#category-tracks)
-- [ ] [Episodes API](https://developer.spotify.com/documentation/web-api/reference-beta/#category-episodes)
+- [x] [Episodes API](https://developer.spotify.com/documentation/web-api/reference-beta/#category-episodes)
 - [ ] [Shows API](https://developer.spotify.com/documentation/web-api/reference-beta/#category-shows)
 
 
