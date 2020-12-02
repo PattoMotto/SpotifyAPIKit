@@ -10,7 +10,7 @@ public struct Show: Codable, Equatable {
     public let copyrights: [Copyright]
     public let description: String
     public let explicit: Bool
-    public let episodes: [EpisodeSimplified]
+    public let episodes: Paging<EpisodeSimplified>
     public let externalUrls: ExternalUrl
     public let href: String
     public let id: String

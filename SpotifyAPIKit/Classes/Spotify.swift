@@ -13,6 +13,7 @@ public final class Spotify {
     static private let userProfileService = UserProfileService(with: networkClient)
     static private let albumService = AlbumService(with: networkClient)
     static private let episodeService = EpisodeService(with: networkClient)
+    static private let showService = ShowService(with: networkClient)
     
     // Mark: - Authentication
 
@@ -133,5 +134,20 @@ public final class Spotify {
 
     public static func getEpisode(id: String, market: Country? = nil, onCompletion: @escaping (SpotifyResult<Episode>) -> Void) {
         episodeService.getEpisode(id: id, market: market, onCompletion: onCompletion)
+    }
+
+    public static func getShows(ids: [String], market: Country? = nil, onCompletion: @escaping (SpotifyResult<[ShowSimplified]>) -> Void) {
+        showService.getShows(ids: ids, market: market, onCompletion: onCompletion)
+    }
+
+    public static func getShow(id: String, market: Country? = nil, onCompletion: @escaping (SpotifyResult<Show>) -> Void) {
+        showService.getShow(id: id, market: market, onCompletion: onCompletion)
+    }
+
+    public static func getEpisodesInShow(id: String,
+                                         market: Country? = nil,
+                                         pagingParameters: PagingParameters? = nil,
+                                         onCompletion: @escaping (SpotifyResult<Paging<EpisodeSimplified>>) -> Void) {
+        showService.getEpisodesInShow(id: id, market: market, pagingParameters: pagingParameters, onCompletion: onCompletion)
     }
 }

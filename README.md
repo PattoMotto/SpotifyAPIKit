@@ -18,11 +18,11 @@ The [Spotify Web API](https://developer.spotify.com/documentation/web-api) for i
 - [ ] [Artists API](https://developer.spotify.com/documentation/web-api/reference-beta/#category-artists)
 - [ ] [Player API](https://developer.spotify.com/documentation/web-api/reference-beta/#category-player)
 - [ ] [Personalization API](https://developer.spotify.com/documentation/web-api/reference-beta/#category-personalization)
-- [ ] [User Profile API](https://developer.spotify.com/documentation/web-api/reference-beta/#category-users-profile)
+- [x] [User Profile API](https://developer.spotify.com/documentation/web-api/reference-beta/#category-users-profile)
 - [x] [Albums API](https://developer.spotify.com/documentation/web-api/reference-beta/#category-albums)
 - [x] [Tracks API](https://developer.spotify.com/documentation/web-api/reference-beta/#category-tracks)
 - [x] [Episodes API](https://developer.spotify.com/documentation/web-api/reference-beta/#category-episodes)
-- [ ] [Shows API](https://developer.spotify.com/documentation/web-api/reference-beta/#category-shows)
+- [x] [Shows API](https://developer.spotify.com/documentation/web-api/reference-beta/#category-shows)
 
 
 ## Example

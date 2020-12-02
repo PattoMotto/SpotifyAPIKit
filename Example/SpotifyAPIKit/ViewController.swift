@@ -102,6 +102,21 @@ class ViewController: UIViewController {
         //                           market: .unitedStates) { result in
         //            print(result)
         //        }
+        //
+        //        Spotify.getShows(ids: ["3iiiCciPimh99K9NYoe6XF", "4fGaAqvwW6kWlYoeo43c9P"],
+        //                         market: .unitedStates) { result in
+        //            print(result)
+        //        }
+        //
+        //        Spotify.getShow(id: "3iiiCciPimh99K9NYoe6XF", market: .unitedStates) { result in
+        //            print(result)
+        //        }
+        //
+        //        Spotify.getEpisodesInShow(id: "3iiiCciPimh99K9NYoe6XF",
+        //                                  market: .unitedStates,
+        //                                  pagingParameters: PagingParameters(offset: 0, limit: 10)) { result in
+        //            print(result)
+        //        }
     }
 
     override func didReceiveMemoryWarning() {
